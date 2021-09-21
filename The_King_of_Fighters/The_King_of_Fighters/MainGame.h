@@ -6,6 +6,7 @@
 class Image;
 class Iori;
 class Hwajai;
+class King;
 class MainGame : public GameEntity
 {
 private:
@@ -30,6 +31,7 @@ private:
 	Iori* iori;
 
 	Hwajai* hwajai;
+	King* king;
 
 public:
 	void Init();
