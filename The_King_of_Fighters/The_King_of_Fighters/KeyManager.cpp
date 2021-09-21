@@ -63,10 +63,30 @@ bool KeyManager::IsOnceKeyUp(int key)
 
 bool KeyManager::IsStayKeyDown(int key)
 {
+	//	bool b = 0x8000 & 0x8001;
+
+	static time_t currTime;
+	// 실습2. 얘도 해보자.
 	if (GetAsyncKeyState(key) & 0x8001)
 	{
+		//cout << "1. true : " << time(&currTime) << endl;
 		return true;
 	}
+	//else
+	//{
+	//	cout << "2. false : " << time(&currTime) << endl;
+	//}
+
+	//if (GetAsyncKeyState(key) & 0x0001)
+	//{
+	//	cout << "3. true : " << time(&currTime) << endl;
+	//	return true;
+	//}
+	//else
+	//{
+	//	cout << "4. false : " << time(&currTime) << endl;
+	//}
+	//cout << endl << endl;
 
 	return false;
 }

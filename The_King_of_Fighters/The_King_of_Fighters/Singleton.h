@@ -1,7 +1,7 @@
 #pragma once // 이거 헤더파일에 무조건 들어가야해요
 
 template <typename T>
-class Singleton
+/*static*/ class Singleton
 {
 protected:
 	static T* instance;		// static 멤버 변수

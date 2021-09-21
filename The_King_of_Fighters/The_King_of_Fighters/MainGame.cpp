@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Image.h"
 #include "Iori.h"
+#include "Hwajai.h"
 
 //int MainGame::clickedMousePosX = 0;
 
@@ -36,6 +37,9 @@ void MainGame::Init()
 	iori = new Iori;
 	iori->Init();
 
+	hwajai = new Hwajai;
+	hwajai->Init();
+
 }
 
 void MainGame::Update()
@@ -43,6 +47,10 @@ void MainGame::Update()
 	if (iori)
 	{
 		iori->Update();
+	}
+	if (hwajai)
+	{
+		hwajai->Update();
 	}
 
 	InvalidateRect(g_hWnd, NULL, false);
@@ -56,12 +64,21 @@ void MainGame::Render(HDC hdc)
 
 	iori->Render(hBackBufferDC);
 
+	hwajai->Render(hBackBufferDC);
+
 	backBuffer->Render(hdc);
 }
 
 void MainGame::Release()
 {
 	SAFE_RELEASE(backBuffer);
+	//if (backBuffer)
+	//{
+	//	backBuffer->Release();
+	//	delete backBuffer;
+	//	backBuffer = nullptr;
+	//}
+
 	SAFE_RELEASE(backGround);
 	SAFE_RELEASE(iori);
 

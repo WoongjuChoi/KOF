@@ -9,6 +9,7 @@ void Iori::Init()
 
 	frameX = frameY = 0;
 	elapsedCount = 0;
+	maxFrame = 9;
 }
 
 void Iori::Update()
@@ -20,7 +21,7 @@ void Iori::Update()
 		if (elapsedCount >= 10)
 		{
 			frameX++;
-			if (frameX >= 9)
+			if (frameX >= maxFrame)
 			{
 				frameX = 0;
 			}

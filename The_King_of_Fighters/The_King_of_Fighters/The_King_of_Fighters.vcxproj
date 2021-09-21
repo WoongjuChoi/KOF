@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Hwajai.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Iori.cpp" />
     <ClCompile Include="KeyManager.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Hwajai.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Iori.h" />
     <ClInclude Include="KeyManager.h" />

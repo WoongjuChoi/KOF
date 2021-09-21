@@ -5,6 +5,7 @@
 // 우리가 구성할 게임 월드
 class Image;
 class Iori;
+class Hwajai;
 class MainGame : public GameEntity
 {
 private:
@@ -27,6 +28,8 @@ private:
 
 	// 이오리
 	Iori* iori;
+
+	Hwajai* hwajai;
 
 public:
 	void Init();

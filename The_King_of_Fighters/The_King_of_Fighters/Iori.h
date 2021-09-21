@@ -9,6 +9,7 @@ private:
 	Image* img;
 	int frameX, frameY;
 	int elapsedCount;
+	int maxFrame;
 
 public:
 	void Init();
