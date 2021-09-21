@@ -4,7 +4,7 @@
 #include "SceneManager.h"
 #include "Image.h"
 #include "Iori.h"
-
+#include "King.h"
 #include "Hwajai.h"
 
 //int MainGame::clickedMousePosX = 0;
@@ -41,9 +41,9 @@ void MainGame::Init()
 	hwajai = new Hwajai;
 	hwajai->Init();
 
-	//// 킹
-	//king = new King;
-	//king->Init();
+	// 킹
+	king = new King;
+	king->Init();
 
 }
 
@@ -53,14 +53,14 @@ void MainGame::Update()
 	{
 		iori->Update();
 	}
+	if (king)
+	{
+		king->Update();
+	}
 	if (hwajai)
 	{
 		hwajai->Update();
 	}
-	//if (king)
-	//{
-	//	king->Update();
-	//}
 
 	InvalidateRect(g_hWnd, NULL, false);
 }
@@ -75,7 +75,7 @@ void MainGame::Render(HDC hdc)
 
 	hwajai->Render(hBackBufferDC);
 
-	//king->Render(hBackBufferDC);
+	king->Render(hBackBufferDC);
 
 	backBuffer->Render(hdc);
 }
@@ -92,7 +92,7 @@ void MainGame::Release()
 
 	SAFE_RELEASE(backGround);
 	SAFE_RELEASE(iori);
-	//SAFE_RELEASE(king);
+	SAFE_RELEASE(king);
 
 	// 타이머 객체 삭제
 	KillTimer(g_hWnd, 0);
