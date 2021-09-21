@@ -18,7 +18,7 @@ void King::Init()
 	frameY = 0;
 	elapsedCount = 0;
 
-	pos.x = WIN_SIZE_X / 2;
+	pos.x = WIN_SIZE_X / 4;
 	pos.y = WIN_SIZE_Y / 2;
 
 	moveType = eMoveType::STANDING;
