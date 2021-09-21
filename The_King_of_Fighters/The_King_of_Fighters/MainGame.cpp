@@ -62,13 +62,6 @@ void MainGame::Render(HDC hdc)
 void MainGame::Release()
 {
 	SAFE_RELEASE(backBuffer);
-	//if (backBuffer)
-	//{
-	//	backBuffer->Release();
-	//	delete backBuffer;
-	//	backBuffer = nullptr;
-	//}
-
 	SAFE_RELEASE(backGround);
 	SAFE_RELEASE(iori);
 
