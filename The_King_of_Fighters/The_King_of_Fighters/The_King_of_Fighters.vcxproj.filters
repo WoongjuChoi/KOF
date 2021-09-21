@@ -54,9 +54,6 @@
     <ClCompile Include="Hwajai.cpp">
       <Filter>MainGame\KOF_Player</Filter>
     </ClCompile>
-    <ClCompile Include="King.cpp">
-      <Filter>MainGame\KOF_Player</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
@@ -90,9 +87,6 @@
       <Filter>2D Framework</Filter>
     </ClInclude>
     <ClInclude Include="Hwajai.h">
-      <Filter>MainGame\KOF_Player</Filter>
-    </ClInclude>
-    <ClInclude Include="King.h">
       <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
   </ItemGroup>
