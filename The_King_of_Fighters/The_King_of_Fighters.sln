@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_King_of_Fighters", "The_King_of_Fighters\The_King_of_Fighters.vcxproj", "{D7B648A9-DB02-4FE2-BA6C-BD3FA6918A10}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_King_of_Fighters", "The_King_of_Fighters.vcxproj", "{D7B648A9-DB02-4FE2-BA6C-BD3FA6918A10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E0F42AE4-2267-4EBC-9DED-387337473CA5}
+		SolutionGuid = {2DC02CC3-F714-4A3D-929D-9D6AD1A765FD}
 	EndGlobalSection
 EndGlobal

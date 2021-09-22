@@ -1,0 +1,26 @@
+﻿  Hwajai.cpp
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.h(9): warning C4091: 'typedef ': 변수를 선언하지 않으면 'Hwajai::eActs' 왼쪽은 무시됩니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.h(10): warning C4091: 'typedef ': 변수를 선언하지 않으면 'Hwajai::eBody' 왼쪽은 무시됩니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(198,38): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(198,31): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(243,79): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(244,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(245,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(246,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(254,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(255,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(256,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(257,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(265,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(266,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(267,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(268,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(276,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(277,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(278,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(279,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(305,40): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(306,41): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(307,39): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Hwajai.cpp(308,42): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  The_King_of_Fighters.vcxproj -> C:\Users\ohqwe\Desktop\프로젝트 백업\The_King_of_Fighters2\Debug\The_King_of_Fighters.exe
