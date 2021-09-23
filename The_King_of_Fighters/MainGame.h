@@ -5,6 +5,7 @@
 // 우리가 구성할 게임 월드
 class Image;
 class Yuri;
+class King;
 class Hwajai;
 class MainGame : public GameEntity
 {
@@ -29,6 +30,7 @@ private:
 	// 캐릭터
 	Hwajai* hwajai;
 	Yuri* yuri;
+	King* king;
 
 public:
 	void Init();

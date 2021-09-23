@@ -80,5 +80,7 @@ public:
     void Render(HDC hdc, int destX, int destY, int frameX, int frameY);
     void Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool xMirror);
 
+    void KingRender(HDC hdc, int destX, int destY, int frameX, int frameY);
+
     HDC GetMemDC() { if (imageInfo) return imageInfo->hMemDc; return NULL; }
 };

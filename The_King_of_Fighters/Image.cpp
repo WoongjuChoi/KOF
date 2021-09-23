@@ -229,3 +229,22 @@ void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool x
             SRCCOPY);         // 복사 옵션
     }
 }
+
+void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY)
+{
+    if (isTransparent)
+    {
+        GdiTransparentBlt(
+            hdc,
+            destX - 235,
+            destY - 313,
+            imageInfo->frameWidth, imageInfo->frameHeight,	// 전체 프레임 수 를 각각 저장해보자
+
+            imageInfo->hMemDc,
+            imageInfo->frameWidth * frameX,
+            imageInfo->frameHeight * frameY,
+            imageInfo->frameWidth, imageInfo->frameHeight,
+            transColor
+        );
+    }
+}
