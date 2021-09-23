@@ -34,8 +34,8 @@ void Yuri::Init()
 	frameRate = 5;
 	action = eActs::standing;
 	delay = false;
-	pos.x = 800;
-	pos.y = 400;
+	pos.x = WIN_SIZE_X / 2;
+	pos.y = WIN_SIZE_Y / 2;
 	moveSpeed = 10.0f;
 
 	size = imageX / 8;

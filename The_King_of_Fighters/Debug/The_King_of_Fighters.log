@@ -1,24 +1,24 @@
 ﻿  Yuri.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(46,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(46,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(47,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(47,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(167,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(167,30): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(213,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(214,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(215,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(216,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(224,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(225,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(226,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(227,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(235,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(236,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(237,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(238,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(246,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(247,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(248,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(249,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  The_King_of_Fighters.vcxproj -> C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Debug\The_King_of_Fighters.exe
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(46,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(46,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(47,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(47,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(167,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(167,30): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(213,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(214,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(215,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(216,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(224,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(225,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(226,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(227,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(235,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(236,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(237,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(238,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(246,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(247,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(248,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(249,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  The_King_of_Fighters.vcxproj -> C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Debug\The_King_of_Fighters.exe
