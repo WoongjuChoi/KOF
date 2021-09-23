@@ -1,24 +1,219 @@
-﻿  Yuri.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(46,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(46,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(47,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(47,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(167,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(167,30): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(213,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(214,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(215,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(216,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(224,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(225,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(226,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(227,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(235,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(236,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(237,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(238,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(246,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(247,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(248,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Yuri.cpp(249,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  The_King_of_Fighters.vcxproj -> C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\Debug\The_King_of_Fighters.exe
+﻿  GameEntity.cpp
+  GameObject.cpp
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(28,19): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(29,19): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(30,40): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(31,41): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(32,39): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\GameObject.cpp(33,42): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Hwajai.cpp
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(44,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(44,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(45,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(45,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(154,38): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(154,31): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(199,79): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(200,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(201,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(202,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(210,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(211,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(212,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(213,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(221,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(222,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(223,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(224,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(232,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(233,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(234,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Hwajai.cpp(235,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Image.cpp
+  Iori.cpp
+  KeyManager.cpp
+  King.cpp
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.h(14,12): error C2011: 'eBody': 'enum' 형식 재정의
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(30,25): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(30,33): error C2065: 'BODY_END': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(37,30): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(37,5): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(156,61): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(156,45): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(176,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(176,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(177,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(177,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(179,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(179,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(180,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(180,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(180,60): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(180,66): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,47): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,53): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,76): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(182,82): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,46): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,52): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,75): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(183,81): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,48): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,54): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,81): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(184,87): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,49): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,55): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,81): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(185,87): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(187,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(187,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(188,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(188,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(190,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(190,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(190,39): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(190,45): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(191,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(191,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(191,39): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(191,45): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(192,16): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(192,22): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(192,51): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(192,54): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,44): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,47): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,69): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(194,72): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,43): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,46): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,68): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(195,71): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,45): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,48): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,75): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(196,78): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,17): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,46): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,49): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,75): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(197,78): error C2065: 'TOP': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(199,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(199,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(200,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(200,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(201,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(201,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(202,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(202,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(203,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(203,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(204,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(204,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(205,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(205,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(206,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(206,23): error C2065: 'HIT_POINT': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(211,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(211,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(212,14): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(212,20): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(212,60): error C2027: 정의되지 않은 형식 'eBody'을(를) 사용했습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(212,66): error C2065: 'BOTTOM': 선언되지 않은 식별자입니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.cpp(212,66): fatal error C1003: 오류 수가 100개를 초과했습니다. 컴파일을 중지합니다.
+  main.cpp
+  MainGame.cpp
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\King.h(14,12): error C2011: 'eBody': 'enum' 형식 재정의
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Config.h(22): message : 'eBody' 선언을 참조하십시오.
+  SceneManager.cpp
+  Yuri.cpp
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(46,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(46,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(47,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(47,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(167,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(167,30): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(213,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(214,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(215,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(216,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(224,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(225,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(226,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(227,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(235,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(236,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(237,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(238,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(246,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(247,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(248,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SH\Desktop\GitHub\KOF\The_King_of_Fighters\Yuri.cpp(249,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...

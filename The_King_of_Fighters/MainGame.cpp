@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Image.h"
 #include "Hwajai.h"
+#include "King.h"
 #include "Yuri.h"
 
 //int MainGame::clickedMousePosX = 0;
@@ -41,10 +42,17 @@ void MainGame::Init()
 	yuri = new Yuri;
 	yuri->Init();
 
+	king = new King;
+	king->Init();
+
 }
 
 void MainGame::Update()
 {
+	if (king)
+	{
+		king->Update();
+	}
 	if (hwajai)
 	{
 		hwajai->Update();
@@ -67,6 +75,8 @@ void MainGame::Render(HDC hdc)
 
 	yuri->Render(hBackBufferDC);
 
+	king->Render(hBackBufferDC);
+
 	backBuffer->Render(hdc);
 }
 
@@ -77,6 +87,7 @@ void MainGame::Release()
 	SAFE_RELEASE(backGround);
 	SAFE_RELEASE(hwajai);
 	SAFE_RELEASE(yuri);
+	SAFE_RELEASE(king);
 
 	// 타이머 객체 삭제
 	KillTimer(g_hWnd, 0);

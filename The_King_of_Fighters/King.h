@@ -11,7 +11,7 @@ enum eMoveType
 	STRONG_PUNCH, STRONG_KICK, ATTACKED, END
 };
 
-enum eBody { TOP, BOTTOM, HIT_POINT, BODY_END };
+enum eeBody { TOP, BOTTOM, HIT_POINT, BODY_END };
 
 class Image;
 class King : public GameObject
