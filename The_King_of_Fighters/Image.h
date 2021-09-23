@@ -81,5 +81,7 @@ public:
     void Render(HDC hdc, int destX, int destY);   // 이미지 데이터를 화면에 복사
     void Render(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player);
 
+    void KingRender(HDC hdc, int destX, int destY, int frameX, int frameY);
+
     HDC GetMemDC() { if (imageInfo) return imageInfo->hMemDc; return NULL; }
 };

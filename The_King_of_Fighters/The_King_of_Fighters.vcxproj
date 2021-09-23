@@ -144,6 +144,7 @@
     <ClCompile Include="Hwajai.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyManager.cpp" />
+    <ClCompile Include="King.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Hwajai.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KeyManager.h" />
+    <ClInclude Include="King.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />
