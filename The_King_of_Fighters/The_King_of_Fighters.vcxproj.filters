@@ -33,9 +33,6 @@
     <ClCompile Include="MainGame.cpp">
       <Filter>MainGame</Filter>
     </ClCompile>
-    <ClCompile Include="Iori.cpp">
-      <Filter>MainGame\KOF_Player</Filter>
-    </ClCompile>
     <ClCompile Include="KeyManager.cpp">
       <Filter>2D Framework\Manager</Filter>
     </ClCompile>
@@ -67,9 +64,6 @@
     </ClInclude>
     <ClInclude Include="MainGame.h">
       <Filter>MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Iori.h">
-      <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
     <ClInclude Include="KeyManager.h">
       <Filter>2D Framework\Manager</Filter>

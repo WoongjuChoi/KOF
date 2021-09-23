@@ -3,7 +3,6 @@
 HRESULT Image::Init(int width, int height)
 {
     HDC hdc = GetDC(g_hWnd);      // 권한이 굉장히 많은 총지배인
-
     // 빈 비트맵 생성
     imageInfo = new IMAGE_INFO;
     imageInfo->width = width;
@@ -14,6 +13,10 @@ HRESULT Image::Init(int width, int height)
                                   // 기본적으로 Bitmap에 연결되어 있다.
     imageInfo->hOldBit =
         (HBITMAP)SelectObject(imageInfo->hMemDc, imageInfo->hBitmap);
+
+    reverseDc = CreateCompatibleDC(hdc);
+    hBitmap1 = CreateCompatibleBitmap(hdc, width, height);
+    SelectObject(reverseDc, hBitmap1);
 
     ReleaseDC(g_hWnd, hdc);
 
@@ -39,12 +42,17 @@ HRESULT Image::Init(const char* fileName, int width, int height, bool isTrans, C
     imageInfo->width = width;
     imageInfo->height = height;
     imageInfo->loadType = ImageLoadType::File;
-    imageInfo->hBitmap = (HBITMAP)LoadImage(g_hInstance, fileName, IMAGE_BITMAP, width, height,
-        LR_LOADFROMFILE);
+    imageInfo->hBitmap = (HBITMAP)LoadImage(g_hInstance, fileName, IMAGE_BITMAP, width, height, LR_LOADFROMFILE);
     imageInfo->hMemDc = CreateCompatibleDC(hdc);   // 새로 생성된 DC 
                                   // 기본적으로 Bitmap에 연결되어 있다.
     imageInfo->hOldBit =
         (HBITMAP)SelectObject(imageInfo->hMemDc, imageInfo->hBitmap);
+
+
+    reverseDc = CreateCompatibleDC(hdc);
+    hBitmap1 = (HBITMAP)LoadImage(g_hInstance, fileName, IMAGE_BITMAP, width, height, LR_LOADFROMFILE);
+    SelectObject(reverseDc, hBitmap1);
+
 
     ReleaseDC(g_hWnd, hdc);
 
@@ -75,6 +83,10 @@ HRESULT Image::Init(const char* fileName, int width, int height, int maxFrameX, 
     imageInfo->hOldBit =
         (HBITMAP)SelectObject(imageInfo->hMemDc, imageInfo->hBitmap);
 
+    reverseDc = CreateCompatibleDC(hdc);
+    hBitmap1 = (HBITMAP)LoadImage(g_hInstance, fileName, IMAGE_BITMAP, width, height, LR_LOADFROMFILE);
+    SelectObject(reverseDc, hBitmap1);
+
     ReleaseDC(g_hWnd, hdc);
 
     this->isTransparent = isTrans;
@@ -94,6 +106,20 @@ HRESULT Image::Init(const char* fileName, int width, int height, int maxFrameX, 
         return E_FAIL;
     }
 
+    // 이미지를 전체 뒤집는 소스
+    /*StretchBlt(
+        imageInfo->hMemDc,
+        0,
+        0,
+        imageInfo->width,
+        imageInfo->height,
+        imageInfo->hMemDc,
+        imageInfo->width,
+        0,
+        -imageInfo->width,
+        imageInfo->height,
+        SRCCOPY);*/
+
     return S_OK;
 
 }
@@ -109,6 +135,9 @@ void Image::Release()
         delete imageInfo;
         imageInfo = nullptr;
     }
+
+    DeleteObject(hBitmap1);
+    DeleteDC(reverseDc);
 }
 
 void Image::Render(HDC hdc)
@@ -154,67 +183,57 @@ void Image::Render(HDC hdc, int destX, int destY)
     }
 }
 
-void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY)
+void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player)
 {
-    // frame X : 0, frameY : 0 => 시작 (68*0 , 0) 얼만큼 복사할건가 (68*1 , 104)
-    // frame X : 1, frameY : 0 => 시작 (68*1 , 0) 끝 (68 , 104)
-    // frame X : 2, frameY : 0 => 시작 (68*2 , 0) 끝 (68 , 104)
-    // frame X : 0, frameY : 0 => 시작 (68*3 , 0) 끝 (68 , 104)
-
     if (isTransparent)
     {
-        GdiTransparentBlt(
-            hdc,
-            destX - (imageInfo->frameWidth / 2),
-            destY - (imageInfo->frameHeight / 2),
-            (imageInfo->frameWidth),
-            (imageInfo->frameHeight),      // 전체 프레임 수
+        if (player == ePlayer::player1)
+        {
+            StretchBlt(
+                reverseDc,
+                imageInfo->frameWidth * frameX,
+                imageInfo->frameHeight * frameY,
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),
+                imageInfo->hMemDc,
+                imageInfo->frameWidth * (frameX + 1),
+                imageInfo->frameHeight * frameY,
+                -imageInfo->frameWidth,
+                imageInfo->frameHeight,
+                SRCCOPY);
 
-            imageInfo->hMemDc,
-            (imageInfo->frameWidth) * frameX,
-            (imageInfo->frameHeight) * frameY,
-            (imageInfo->frameWidth),
-            (imageInfo->frameHeight),
-            transColor
-        );
-    }
-    else
-    {
-        BitBlt(hdc,            // 복사 목적지 DC
-            destX - (imageInfo->width / 2),            // 복사될 비트맵의 시작 위치 x
-            destY - (imageInfo->height / 2),            // 복사될 비트맵의 시작 위치 y
-            imageInfo->width,   // 원본 복사할 가로 크기
-            imageInfo->height,   // 원본 복사할 세로 크기
-            imageInfo->hMemDc,   // 원본 DC
-            0,               // 원본 비트맵 복사 시작 위치 x
-            0,               // 원본 비트맵 복사 시작 위치 y
-            SRCCOPY);         // 복사 옵션
-    }
-}
-void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool xMirror)
-{
-    // frame X : 0, frameY : 0 => 시작 (68*0 , 0) 얼만큼 복사할건가 (68*1 , 104)
-    // frame X : 1, frameY : 0 => 시작 (68*1 , 0) 끝 (68 , 104)
-    // frame X : 2, frameY : 0 => 시작 (68*2 , 0) 끝 (68 , 104)
-    // frame X : 0, frameY : 0 => 시작 (68*3 , 0) 끝 (68 , 104)
+            GdiTransparentBlt(
+                hdc,
+                destX - (imageInfo->frameWidth / 2),
+                destY - (imageInfo->frameHeight / 2),
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),      // 전체 프레임 수
 
-    if (isTransparent)
-    {
-        GdiTransparentBlt(
-            hdc,
-            destX - (imageInfo->frameWidth / 2),
-            destY - (imageInfo->frameHeight / 2),
-            (imageInfo->frameWidth),
-            (imageInfo->frameHeight),      // 전체 프레임 수
+                reverseDc,
+                (imageInfo->frameWidth) * frameX,
+                (imageInfo->frameHeight) * frameY,
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),
+                transColor
+            );
+        }
+        else
+        {
+            GdiTransparentBlt(
+                hdc,
+                destX - (imageInfo->frameWidth / 2),
+                destY - (imageInfo->frameHeight / 2),
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),      // 전체 프레임 수
 
-            imageInfo->hMemDc,
-            (imageInfo->frameWidth) * (frameX+1),
-            (imageInfo->frameHeight) * frameY,
-            (imageInfo->frameWidth)*(-1),
-            (imageInfo->frameHeight),
-            transColor
-        );
-
+                imageInfo->hMemDc,
+                (imageInfo->frameWidth) * frameX,
+                (imageInfo->frameHeight) * frameY,
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),
+                transColor
+            );
+        }
     }
     else
     {

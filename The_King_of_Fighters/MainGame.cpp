@@ -28,31 +28,32 @@ void MainGame::Init()
 
 	// 배경 이미지
 	backGround = new Image;
-	if (!SUCCEEDED(backGround->Init("Image/mapImage.bmp", 1400, 933)))
+	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", 1400, 933)))
 	{
 		cout << "Image/bin.bmp 파일 로드에 실패했다." << endl;
 	}
 
 	// 캐릭터
+	player1->Init(ePlayer::player2, eCharacter::eHwajai);
+	player2->Init(ePlayer::player1, eCharacter::eYuri);
 
-	hwajai = new Hwajai;
-	hwajai->Init();
-
-	yuri = new Yuri;
-	yuri->Init();
+	/*yuri = new Yuri;
+	yuri->Init(ePlayer::player1);*/
 
 }
 
 void MainGame::Update()
 {
-	if (hwajai)
+	player1->Update(eCharacter::eYuri);
+	player2->Update(eCharacter::eHwajai);
+	/*if (hwajai)
 	{
 		hwajai->Update();
 	}
 	if (yuri)
 	{
 		yuri->Update();
-	}
+	}*/
 
 	InvalidateRect(g_hWnd, NULL, false);
 }
@@ -63,9 +64,12 @@ void MainGame::Render(HDC hdc)
 
 	backGround->Render(hBackBufferDC);
 
-	hwajai->Render(hBackBufferDC);
+	player1->Render(hBackBufferDC, eCharacter::eYuri);
+	player2->Render(hBackBufferDC, eCharacter::eHwajai);
 
-	yuri->Render(hBackBufferDC);
+	/*hwajai->Render(hBackBufferDC);
+
+	yuri->Render(hBackBufferDC);*/
 
 	backBuffer->Render(hdc);
 }
@@ -75,8 +79,12 @@ void MainGame::Release()
 	SAFE_RELEASE(backBuffer);
 
 	SAFE_RELEASE(backGround);
-	SAFE_RELEASE(hwajai);
-	SAFE_RELEASE(yuri);
+
+	player1->Release(eCharacter::eYuri);
+	player2->Release(eCharacter::eHwajai);
+
+	/*SAFE_RELEASE(hwajai);
+	SAFE_RELEASE(yuri);*/
 
 	// 타이머 객체 삭제
 	KillTimer(g_hWnd, 0);

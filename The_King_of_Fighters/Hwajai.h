@@ -12,7 +12,7 @@ private:
 	int hitLeft, hitTop, hitRight, hitBottom;
 	POINTFLOAT hitPos;
 public:
-	void Init();
+	void Init(ePlayer player);
 	void Update();
 	void Render(HDC hdc);
 	void Release();

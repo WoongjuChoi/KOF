@@ -11,6 +11,8 @@ public:
         Empty,         // 빈 비트맵 이미지 파일
         End
     };
+    HDC reverseDc;
+    HBITMAP hBitmap1;
 
     // class와 struct의 문법적인 차이
     // 접근지정자가 public이냐 private이냐
@@ -77,8 +79,7 @@ public:
 
     void Render(HDC hdc);
     void Render(HDC hdc, int destX, int destY);   // 이미지 데이터를 화면에 복사
-    void Render(HDC hdc, int destX, int destY, int frameX, int frameY);
-    void Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool xMirror);
+    void Render(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player);
 
     HDC GetMemDC() { if (imageInfo) return imageInfo->hMemDc; return NULL; }
 };

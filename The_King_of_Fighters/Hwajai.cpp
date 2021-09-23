@@ -2,8 +2,11 @@
 #include "Image.h"
 #include "KeyManager.h"
 
-void Hwajai::Init()
+void Hwajai::Init(ePlayer player)
 {
+	GameObject::SetKey(player);
+	this->player = player;
+
 	imageX = 880;
 	hwaj = new Image[eActs::end];
 	body = new Body[eBody::bodyend];
@@ -30,8 +33,8 @@ void Hwajai::Init()
 	frameRate = 5;
 	action = eActs::standing;
 	delay = false;
-	pos.x = WIN_SIZE_X / 2;
-	pos.y = WIN_SIZE_Y / 2;
+	pos.x = WIN_SIZE_X / 5 * 4;
+	pos.y = WIN_SIZE_Y / 4 * 3;
 	moveSpeed = 10.0f;
 
 
@@ -41,9 +44,9 @@ void Hwajai::Init()
 
 void Hwajai::Update()
 {
-	SetBodyPos(body[eBody::bottom], pos.x, pos.y, 15, -10, 0, 0);
-	SetBodyPos(body[eBody::top], pos.x, pos.y - size, 30, -10, 0, 0);
-	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0);
+	SetBodyPos(body[eBody::bottom], pos.x, pos.y, 15, -10, 0, 0, ePlayer::player2);
+	SetBodyPos(body[eBody::top], pos.x, pos.y - size, 30, -10, 0, 0, ePlayer::player2);
+	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0, ePlayer::player2);
 
 	if (IsCollision(body[eBody::bottom]))
 	{
@@ -65,7 +68,7 @@ void Hwajai::Update()
 			elapsedCount = 0;
 		}
 
-		else if (KeyManager::GetSingleton()->IsStayKeyDown('A'))
+		else if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
 			if (action != eActs::move)
 			{
@@ -86,7 +89,7 @@ void Hwajai::Update()
 				elapsedCount = 0;
 			}
 		}
-		else if (KeyManager::GetSingleton()->IsStayKeyDown('D'))
+		else if (KeyManager::GetSingleton()->IsStayKeyDown(right))
 		{
 			if (action != eActs::move)
 			{
@@ -107,19 +110,19 @@ void Hwajai::Update()
 				elapsedCount = 0;
 			}
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('R'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(wP))
 		{
 			ActionChange(eActs::weekPunch, 12);
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('T'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(sP))
 		{
 			ActionChange(eActs::strongPunch, 8);
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('F'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(wK))
 		{
 			ActionChange(eActs::weekFoot, 10);
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('G'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(sK))
 		{
 			ActionChange(eActs::strongFoot, 12);
 		}
@@ -151,7 +154,7 @@ void Hwajai::Update()
 
 void Hwajai::Render(HDC hdc)
 {
-		hwaj[action].Render(hdc, pos.x, pos.y, frameX, frameY);
+		hwaj[action].Render(hdc, pos.x, pos.y, frameX, frameY, player);
 
 		DrowBodyPos(hdc, body[eBody::bottom]);			//하체부분
 		DrowBodyPos(hdc, body[eBody::top]);				//상체부분
