@@ -37,49 +37,23 @@ void Hwajai::Init()
 
 
 	size = imageX/8;
-
-
-
 }
 
 void Hwajai::Update()
 {
-	//body[eBody::bottom].bodyPos.x = pos.x;
-	//body[eBody::bottom].bodyPos.y = pos.y;
-	//body[eBody::bottom].left = body[eBody::bottom].bodyPos.x - size / 2 + 15;
-	//body[eBody::bottom].right = body[eBody::bottom].bodyPos.x + size / 2 - 10;
-	//body[eBody::bottom].top = body[eBody::bottom].bodyPos.y - size / 2;
-	//body[eBody::bottom].bottom = body[eBody::bottom].bodyPos.y + size / 2;
-	SetBodyPos(body[eBody::bottom], 15, -10, 0, 0);
-	SetBodyPos(body[eBody::top], 30, -10, 0, 0);
-
-	//body[eBody::top].bodyPos.x = pos.x;
-	//body[eBody::top].bodyPos.y = pos.y - size;
-	//body[eBody::top].left = body[eBody::top].bodyPos.x - size / 2 + 30;
-	//body[eBody::top].right = body[eBody::top].bodyPos.x + size / 2 - 10;
-	//body[eBody::top].top = body[eBody::top].bodyPos.y - size / 2;
-	//body[eBody::top].bottom = body[eBody::top].bodyPos.y + size / 2;
-
-	body[eBody::hitPoint].bodyPos.x = 0;
-	body[eBody::hitPoint].bodyPos.y = 0;
-	body[eBody::hitPoint].left		= 0;
-	body[eBody::hitPoint].right		= 0;
-	body[eBody::hitPoint].top		= 0;
-	body[eBody::hitPoint].bottom	= 0;
+	SetBodyPos(body[eBody::bottom], pos.x, pos.y, 15, -10, 0, 0);
+	SetBodyPos(body[eBody::top], pos.x, pos.y - size, 30, -10, 0, 0);
+	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0);
 
 	if (IsCollision(body[eBody::bottom]))
 	{
-		action = eActs::hit;
-		delay = true;
 		maxFrame = 4;
-		frameX = 0;
-		elapsedCount = 0;
+		ActionChange(eActs::hit, maxFrame);
 		pos.x += moveSpeed*2;
 	}
 
 	if (!delay)
 	{
-
 		elapsedCount++;
 		if (elapsedCount > frameRate)
 		{
@@ -135,35 +109,19 @@ void Hwajai::Update()
 		}
 		else if (KeyManager::GetSingleton()->IsOnceKeyDown('R'))
 		{
-			action = eActs::weekPunch;
-			delay = true;
-			maxFrame = 12;
-			frameX = 0;
-			elapsedCount = 0;
+			ActionChange(eActs::weekPunch, 12);
 		}
 		else if (KeyManager::GetSingleton()->IsOnceKeyDown('T'))
 		{
-			action = eActs::strongPunch;
-			delay = true;
-			maxFrame = 8;
-			frameX = 0;
-			elapsedCount = 0;
+			ActionChange(eActs::strongPunch, 8);
 		}
 		else if (KeyManager::GetSingleton()->IsOnceKeyDown('F'))
 		{
-			action = eActs::weekFoot;
-			delay = true;
-			maxFrame = 10;
-			frameX = 0;
-			elapsedCount = 0;
+			ActionChange(eActs::weekFoot, 10);
 		}
 		else if (KeyManager::GetSingleton()->IsOnceKeyDown('G'))
 		{
-			action = eActs::strongFoot;
-			delay = true;
-			maxFrame = 12;
-			frameX = 0;
-			elapsedCount = 0;
+			ActionChange(eActs::strongFoot, 12);
 		}
 		else
 		{
@@ -193,7 +151,6 @@ void Hwajai::Update()
 
 void Hwajai::Render(HDC hdc)
 {
-	
 		hwaj[action].Render(hdc, pos.x, pos.y, frameX, frameY);
 
 		DrowBodyPos(hdc, body[eBody::bottom]);			//하체부분
@@ -279,30 +236,4 @@ void Hwajai::HitBoxPos()
 		}
 		break;
 	}
-}
-
-void Hwajai::DrowBodyPos(HDC hdc, Body body)
-{
-	MoveToEx(hdc, body.left, body.top, NULL);
-	LineTo(hdc, body.left, body.bottom);
-	LineTo(hdc, body.right, body.bottom);
-	LineTo(hdc, body.right, body.top);
-	LineTo(hdc, body.left, body.top);
-}
-
-void Hwajai::SetBodyPos(Body &body, int leftPos, int rightPos, int topPos, int bottomPos)
-{
-	//this->body->bodyPos.x = pos.x;
-	//this->body->bodyPos.y = pos.y;
-	//this->body->left = this->body->bodyPos.x - size / 2 + leftPos;
-	//this->body->right = this->body->bodyPos.x + size / 2 + rightPos;
-	//this->body->top = this->body->bodyPos.y - size / 2 + topPos;
-	//this->body->bottom = this->body->bodyPos.y + size / 2 + bottomPos;
-	// 
-	body.bodyPos.x = pos.x;
-	body.bodyPos.y = pos.y;
-	body.left = body.bodyPos.x - size / 2 + leftPos;
-	body.right = body.bodyPos.x + size / 2 + rightPos;
-	body.top = body.bodyPos.y - size / 2 + topPos;
-	body.bottom = body.bodyPos.y + size / 2 + bottomPos;
 }

@@ -3,8 +3,8 @@
 #include "KeyManager.h"
 #include "SceneManager.h"
 #include "Image.h"
-#include "Iori.h"
 #include "Hwajai.h"
+#include "Yuri.h"
 
 //int MainGame::clickedMousePosX = 0;
 
@@ -33,24 +33,25 @@ void MainGame::Init()
 		cout << "Image/bin.bmp 파일 로드에 실패했다." << endl;
 	}
 
-	// 이오리
-	iori = new Iori;
-	iori->Init();
+	// 캐릭터
 
 	hwajai = new Hwajai;
 	hwajai->Init();
+
+	yuri = new Yuri;
+	yuri->Init();
 
 }
 
 void MainGame::Update()
 {
-	if (iori)
-	{
-		iori->Update();
-	}
 	if (hwajai)
 	{
 		hwajai->Update();
+	}
+	if (yuri)
+	{
+		yuri->Update();
 	}
 
 	InvalidateRect(g_hWnd, NULL, false);
@@ -62,9 +63,9 @@ void MainGame::Render(HDC hdc)
 
 	backGround->Render(hBackBufferDC);
 
-	iori->Render(hBackBufferDC);
-
 	hwajai->Render(hBackBufferDC);
+
+	yuri->Render(hBackBufferDC);
 
 	backBuffer->Render(hdc);
 }
@@ -72,15 +73,10 @@ void MainGame::Render(HDC hdc)
 void MainGame::Release()
 {
 	SAFE_RELEASE(backBuffer);
-	//if (backBuffer)
-	//{
-	//	backBuffer->Release();
-	//	delete backBuffer;
-	//	backBuffer = nullptr;
-	//}
 
 	SAFE_RELEASE(backGround);
-	SAFE_RELEASE(iori);
+	SAFE_RELEASE(hwajai);
+	SAFE_RELEASE(yuri);
 
 	// 타이머 객체 삭제
 	KillTimer(g_hWnd, 0);

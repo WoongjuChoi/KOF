@@ -18,6 +18,8 @@ using namespace std;
 #define SAFE_RELEASE(p)	{ if (p) { p->Release(); delete p; p = nullptr; } }
 
 enum MoveDir { Left, Right, Up, Down };
+enum eActs { standing, move, weekPunch, weekFoot, strongPunch, strongFoot, hit, die, victory, moveForward, moveBackward, end };
+enum eBody { top, bottom, hitPoint, bodyend };
 
 extern HWND g_hWnd;
 extern HINSTANCE g_hInstance;

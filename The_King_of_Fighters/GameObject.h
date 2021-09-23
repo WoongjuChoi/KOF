@@ -14,6 +14,13 @@
 */
 
 #include "GameEntity.h"
+#include "Config.h"
+
+struct Body
+{
+	int left, top, right, bottom;
+	POINTFLOAT bodyPos;
+};
 
 class GameObject : public GameEntity
 {
@@ -24,6 +31,14 @@ protected:	// 상속된 클래스에 노출시킨다.
 	RECT shape;
 	float moveSpeed;
 	int bodySize;
+	int imageX;
+	int frameX, frameY;
+	int elapsedCount;
+	int maxFrame;
+	int frameRate;
+	int size;
+	bool delay;
+	eActs action;
 
 public:
 	void Move();
@@ -34,7 +49,12 @@ public:
 	inline void SetMoveSpeed(float speed) { this->moveSpeed = speed; }
 	inline int GetBodySize() { return this->bodySize; }
 
+	void ActionChange(eActs act, int frame);
+	void DrowBodyPos(HDC hdc, Body body);
+	void SetBodyPos(Body& body, int posX, int posY, int leftPos, int rightPos, int topPos, int bottomPos);
+
 	GameObject();
 	~GameObject();
 };
+
 

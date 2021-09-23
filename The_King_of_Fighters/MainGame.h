@@ -4,7 +4,7 @@
 
 // 우리가 구성할 게임 월드
 class Image;
-class Iori;
+class Yuri;
 class Hwajai;
 class MainGame : public GameEntity
 {
@@ -26,10 +26,9 @@ private:
 	// 배경 이미지
 	Image* backGround;
 
-	// 이오리
-	Iori* iori;
-
+	// 캐릭터
 	Hwajai* hwajai;
+	Yuri* yuri;
 
 public:
 	void Init();
