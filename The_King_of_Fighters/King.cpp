@@ -27,14 +27,14 @@ void King::Init()
 	characterPos.y = (WIN_SIZE_Y / 2) ;
 
 	// 킹 캐릭터 상단, 하단 상자 만들기 & 히트상자 초기화
-	body = new Body[eBody::BODY_END];
+	body = new Body[eeBody::BODY_END];
 	ConstructBody(body);
 }
 
 void King::Update()
 {
 	// 킹 맞았는지 체크
-	if (isCollision(body[eBody::BOTTOM]))
+	if (isCollision(body[eeBody::BOTTOM]))
 	{
 		frameX = 0;
 		maxFrame = 3;
@@ -173,76 +173,76 @@ void King::Release()
 
 void King::ConstructBody(Body*& body)
 {
-	body[eBody::BOTTOM].size.x = 100;
-	body[eBody::BOTTOM].size.y = 100;
+	body[eeBody::BOTTOM].size.x = 100;
+	body[eeBody::BOTTOM].size.y = 100;
 
-	body[eBody::BOTTOM].pos.x = characterPos.x;
-	body[eBody::BOTTOM].pos.y = characterPos.y - (body[eBody::BOTTOM].size.y / 2);
+	body[eeBody::BOTTOM].pos.x = characterPos.x;
+	body[eeBody::BOTTOM].pos.y = characterPos.y - (body[eeBody::BOTTOM].size.y / 2);
 
-	body[eBody::BOTTOM].shape.left = body[eBody::BOTTOM].pos.x - (body[eBody::BOTTOM].size.x / 2);
-	body[eBody::BOTTOM].shape.top = body[eBody::BOTTOM].pos.y - (body[eBody::BOTTOM].size.y / 2);
-	body[eBody::BOTTOM].shape.right = body[eBody::BOTTOM].shape.left + body[eBody::BOTTOM].size.x;
-	body[eBody::BOTTOM].shape.bottom = body[eBody::BOTTOM].shape.top + body[eBody::BOTTOM].size.y;
+	body[eeBody::BOTTOM].shape.left = body[eeBody::BOTTOM].pos.x - (body[eeBody::BOTTOM].size.x / 2);
+	body[eeBody::BOTTOM].shape.top = body[eeBody::BOTTOM].pos.y - (body[eeBody::BOTTOM].size.y / 2);
+	body[eeBody::BOTTOM].shape.right = body[eeBody::BOTTOM].shape.left + body[eeBody::BOTTOM].size.x;
+	body[eeBody::BOTTOM].shape.bottom = body[eeBody::BOTTOM].shape.top + body[eeBody::BOTTOM].size.y;
 
-	body[eBody::TOP].size.x = 80;
-	body[eBody::TOP].size.y = 100;
+	body[eeBody::TOP].size.x = 80;
+	body[eeBody::TOP].size.y = 100;
 
-	body[eBody::TOP].pos.x = body[eBody::BOTTOM].pos.x + 10;
-	body[eBody::TOP].pos.y = body[eBody::BOTTOM].pos.y -
-		(body[eBody::BOTTOM].size.y / 2) - (body[eBody::TOP].size.y / 2);
+	body[eeBody::TOP].pos.x = body[eeBody::BOTTOM].pos.x + 10;
+	body[eeBody::TOP].pos.y = body[eeBody::BOTTOM].pos.y -
+		(body[eeBody::BOTTOM].size.y / 2) - (body[eeBody::TOP].size.y / 2);
 
-	body[eBody::TOP].shape.left = body[eBody::TOP].pos.x - body[eBody::TOP].size.x / 2;
-	body[eBody::TOP].shape.top = body[eBody::TOP].pos.y - body[eBody::TOP].size.y / 2;
-	body[eBody::TOP].shape.right = body[eBody::TOP].shape.left + body[eBody::TOP].size.x;
-	body[eBody::TOP].shape.bottom = body[eBody::TOP].shape.top + body[eBody::TOP].size.y;
+	body[eeBody::TOP].shape.left = body[eeBody::TOP].pos.x - body[eeBody::TOP].size.x / 2;
+	body[eeBody::TOP].shape.top = body[eeBody::TOP].pos.y - body[eeBody::TOP].size.y / 2;
+	body[eeBody::TOP].shape.right = body[eeBody::TOP].shape.left + body[eeBody::TOP].size.x;
+	body[eeBody::TOP].shape.bottom = body[eeBody::TOP].shape.top + body[eeBody::TOP].size.y;
 
-	body[eBody::HIT_POINT].size.x = 0;
-	body[eBody::HIT_POINT].size.y = 0;
-	body[eBody::HIT_POINT].pos.x = 0;
-	body[eBody::HIT_POINT].pos.y = 0;
-	body[eBody::HIT_POINT].shape.left = 0;
-	body[eBody::HIT_POINT].shape.right = 0;
-	body[eBody::HIT_POINT].shape.top = 0;
-	body[eBody::HIT_POINT].shape.bottom = 0;
+	body[eeBody::HIT_POINT].size.x = 0;
+	body[eeBody::HIT_POINT].size.y = 0;
+	body[eeBody::HIT_POINT].pos.x = 0;
+	body[eeBody::HIT_POINT].pos.y = 0;
+	body[eeBody::HIT_POINT].shape.left = 0;
+	body[eeBody::HIT_POINT].shape.right = 0;
+	body[eeBody::HIT_POINT].shape.top = 0;
+	body[eeBody::HIT_POINT].shape.bottom = 0;
 }
 
 void King::UpdateBody(Body*& body)
 {
-	body[eBody::BOTTOM].pos.x = characterPos.x;
-	body[eBody::BOTTOM].pos.y = characterPos.y - (body[eBody::BOTTOM].size.y / 2);
+	body[eeBody::BOTTOM].pos.x = characterPos.x;
+	body[eeBody::BOTTOM].pos.y = characterPos.y - (body[eeBody::BOTTOM].size.y / 2);
 
-	body[eBody::BOTTOM].shape.left = body[eBody::BOTTOM].pos.x - (body[eBody::BOTTOM].size.x / 2);
-	body[eBody::BOTTOM].shape.top = body[eBody::BOTTOM].pos.y - (body[eBody::BOTTOM].size.y / 2);
-	body[eBody::BOTTOM].shape.right = body[eBody::BOTTOM].shape.left + body[eBody::BOTTOM].size.x;
-	body[eBody::BOTTOM].shape.bottom = body[eBody::BOTTOM].shape.top + body[eBody::BOTTOM].size.y;
+	body[eeBody::BOTTOM].shape.left = body[eeBody::BOTTOM].pos.x - (body[eeBody::BOTTOM].size.x / 2);
+	body[eeBody::BOTTOM].shape.top = body[eeBody::BOTTOM].pos.y - (body[eeBody::BOTTOM].size.y / 2);
+	body[eeBody::BOTTOM].shape.right = body[eeBody::BOTTOM].shape.left + body[eeBody::BOTTOM].size.x;
+	body[eeBody::BOTTOM].shape.bottom = body[eeBody::BOTTOM].shape.top + body[eeBody::BOTTOM].size.y;
 
-	body[eBody::TOP].pos.x = body[eBody::BOTTOM].pos.x + 10;
-	body[eBody::TOP].pos.y = body[eBody::BOTTOM].pos.y -
-		(body[eBody::BOTTOM].size.y / 2) - (body[eBody::TOP].size.y / 2);
+	body[eeBody::TOP].pos.x = body[eeBody::BOTTOM].pos.x + 10;
+	body[eeBody::TOP].pos.y = body[eeBody::BOTTOM].pos.y -
+		(body[eeBody::BOTTOM].size.y / 2) - (body[eeBody::TOP].size.y / 2);
 
-	body[eBody::TOP].shape.left = body[eBody::TOP].pos.x - body[eBody::TOP].size.x / 2;
-	body[eBody::TOP].shape.top = body[eBody::TOP].pos.y - body[eBody::TOP].size.y / 2;
-	body[eBody::TOP].shape.right = body[eBody::TOP].shape.left + body[eBody::TOP].size.x;
-	body[eBody::TOP].shape.bottom = body[eBody::TOP].shape.top + body[eBody::TOP].size.y;
+	body[eeBody::TOP].shape.left = body[eeBody::TOP].pos.x - body[eeBody::TOP].size.x / 2;
+	body[eeBody::TOP].shape.top = body[eeBody::TOP].pos.y - body[eeBody::TOP].size.y / 2;
+	body[eeBody::TOP].shape.right = body[eeBody::TOP].shape.left + body[eeBody::TOP].size.x;
+	body[eeBody::TOP].shape.bottom = body[eeBody::TOP].shape.top + body[eeBody::TOP].size.y;
 
-	body[eBody::HIT_POINT].size.x = 0;
-	body[eBody::HIT_POINT].size.y = 0;
-	body[eBody::HIT_POINT].pos.x = 0;
-	body[eBody::HIT_POINT].pos.y = 0;
-	body[eBody::HIT_POINT].shape.left = 0;
-	body[eBody::HIT_POINT].shape.right = 0;
-	body[eBody::HIT_POINT].shape.top = 0;
-	body[eBody::HIT_POINT].shape.bottom = 0;
+	body[eeBody::HIT_POINT].size.x = 0;
+	body[eeBody::HIT_POINT].size.y = 0;
+	body[eeBody::HIT_POINT].pos.x = 0;
+	body[eeBody::HIT_POINT].pos.y = 0;
+	body[eeBody::HIT_POINT].shape.left = 0;
+	body[eeBody::HIT_POINT].shape.right = 0;
+	body[eeBody::HIT_POINT].shape.top = 0;
+	body[eeBody::HIT_POINT].shape.bottom = 0;
 }
 
 void King::RenderBody(HDC hdc, Body*& body)
 {
-	Rectangle(hdc, body[eBody::BOTTOM].shape.left, body[eBody::BOTTOM].shape.top,
-		body[eBody::BOTTOM].shape.right, body[eBody::BOTTOM].shape.bottom);
-	Rectangle(hdc, body[eBody::TOP].shape.left, body[eBody::TOP].shape.top,
-		body[eBody::TOP].shape.right, body[eBody::TOP].shape.bottom);
-	Rectangle(hdc, body[eBody::HIT_POINT].shape.left, body[eBody::HIT_POINT].shape.top,
-		body[eBody::HIT_POINT].shape.right, body[eBody::HIT_POINT].shape.bottom);
+	Rectangle(hdc, body[eeBody::BOTTOM].shape.left, body[eeBody::BOTTOM].shape.top,
+		body[eeBody::BOTTOM].shape.right, body[eeBody::BOTTOM].shape.bottom);
+	Rectangle(hdc, body[eeBody::TOP].shape.left, body[eeBody::TOP].shape.top,
+		body[eeBody::TOP].shape.right, body[eeBody::TOP].shape.bottom);
+	Rectangle(hdc, body[eeBody::HIT_POINT].shape.left, body[eeBody::HIT_POINT].shape.top,
+		body[eeBody::HIT_POINT].shape.right, body[eeBody::HIT_POINT].shape.bottom);
 }
 
 void King::CreateHitPoint(Body*& body)
@@ -252,53 +252,53 @@ void King::CreateHitPoint(Body*& body)
 	case eMoveType::WEAK_PUNCH:
 		if (frameX >= 2 && frameX <= 4)
 		{
-			body[eBody::HIT_POINT].size.x = 150;
-			body[eBody::HIT_POINT].size.y = 50;
-			body[eBody::HIT_POINT].pos.x = body[eBody::TOP].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].pos.y = body[eBody::TOP].pos.y - body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.left = body[eBody::HIT_POINT].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].shape.top = body[eBody::HIT_POINT].pos.y - body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.right = body[eBody::HIT_POINT].shape.left + body[eBody::HIT_POINT].size.x;
-			body[eBody::HIT_POINT].shape.bottom = body[eBody::HIT_POINT].shape.top + body[eBody::HIT_POINT].size.y;
+			body[eeBody::HIT_POINT].size.x = 150;
+			body[eeBody::HIT_POINT].size.y = 50;
+			body[eeBody::HIT_POINT].pos.x = body[eeBody::TOP].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].pos.y = body[eeBody::TOP].pos.y - body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.left = body[eeBody::HIT_POINT].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].shape.top = body[eeBody::HIT_POINT].pos.y - body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.right = body[eeBody::HIT_POINT].shape.left + body[eeBody::HIT_POINT].size.x;
+			body[eeBody::HIT_POINT].shape.bottom = body[eeBody::HIT_POINT].shape.top + body[eeBody::HIT_POINT].size.y;
 		}
 		break;
 	case eMoveType::WEAK_KICK:
 		if (frameX >= 2 && frameX <= 5)
 		{
-			body[eBody::HIT_POINT].size.x = 150;
-			body[eBody::HIT_POINT].size.y = 140;
-			body[eBody::HIT_POINT].pos.x = body[eBody::TOP].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].pos.y = body[eBody::TOP].pos.y + body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.left = body[eBody::HIT_POINT].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].shape.top = body[eBody::HIT_POINT].pos.y - body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.right = body[eBody::HIT_POINT].shape.left + body[eBody::HIT_POINT].size.x;
-			body[eBody::HIT_POINT].shape.bottom = body[eBody::HIT_POINT].shape.top + body[eBody::HIT_POINT].size.y;
+			body[eeBody::HIT_POINT].size.x = 150;
+			body[eeBody::HIT_POINT].size.y = 140;
+			body[eeBody::HIT_POINT].pos.x = body[eeBody::TOP].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].pos.y = body[eeBody::TOP].pos.y + body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.left = body[eeBody::HIT_POINT].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].shape.top = body[eeBody::HIT_POINT].pos.y - body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.right = body[eeBody::HIT_POINT].shape.left + body[eeBody::HIT_POINT].size.x;
+			body[eeBody::HIT_POINT].shape.bottom = body[eeBody::HIT_POINT].shape.top + body[eeBody::HIT_POINT].size.y;
 		}
 		break;
 	case eMoveType::STRONG_PUNCH:
 		if (frameX >= 3 && frameX <= 6)
 		{
-			body[eBody::HIT_POINT].size.x = 180;
-			body[eBody::HIT_POINT].size.y = 70;
-			body[eBody::HIT_POINT].pos.x = body[eBody::TOP].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].pos.y = body[eBody::TOP].pos.y - body[eBody::HIT_POINT].size.y / 4;
-			body[eBody::HIT_POINT].shape.left = body[eBody::HIT_POINT].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].shape.top = body[eBody::HIT_POINT].pos.y - body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.right = body[eBody::HIT_POINT].shape.left + body[eBody::HIT_POINT].size.x;
-			body[eBody::HIT_POINT].shape.bottom = body[eBody::HIT_POINT].shape.top + body[eBody::HIT_POINT].size.y;
+			body[eeBody::HIT_POINT].size.x = 180;
+			body[eeBody::HIT_POINT].size.y = 70;
+			body[eeBody::HIT_POINT].pos.x = body[eeBody::TOP].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].pos.y = body[eeBody::TOP].pos.y - body[eeBody::HIT_POINT].size.y / 4;
+			body[eeBody::HIT_POINT].shape.left = body[eeBody::HIT_POINT].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].shape.top = body[eeBody::HIT_POINT].pos.y - body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.right = body[eeBody::HIT_POINT].shape.left + body[eeBody::HIT_POINT].size.x;
+			body[eeBody::HIT_POINT].shape.bottom = body[eeBody::HIT_POINT].shape.top + body[eeBody::HIT_POINT].size.y;
 		}
 		break;
 	case eMoveType::STRONG_KICK:
 		if (frameX >= 3 && frameX <= 6)
 		{
-			body[eBody::HIT_POINT].size.x = 170;
-			body[eBody::HIT_POINT].size.y = 150;
-			body[eBody::HIT_POINT].pos.x = body[eBody::TOP].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].pos.y = body[eBody::TOP].pos.y/* - body[eBody::HIT_POINT].size.y / 2*/;
-			body[eBody::HIT_POINT].shape.left = body[eBody::HIT_POINT].pos.x - body[eBody::HIT_POINT].size.x / 2;
-			body[eBody::HIT_POINT].shape.top = body[eBody::HIT_POINT].pos.y - body[eBody::HIT_POINT].size.y / 2;
-			body[eBody::HIT_POINT].shape.right = body[eBody::HIT_POINT].shape.left + body[eBody::HIT_POINT].size.x;
-			body[eBody::HIT_POINT].shape.bottom = body[eBody::HIT_POINT].shape.top + body[eBody::HIT_POINT].size.y;
+			body[eeBody::HIT_POINT].size.x = 170;
+			body[eeBody::HIT_POINT].size.y = 150;
+			body[eeBody::HIT_POINT].pos.x = body[eeBody::TOP].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].pos.y = body[eeBody::TOP].pos.y/* - body[eeBody::HIT_POINT].size.y / 2*/;
+			body[eeBody::HIT_POINT].shape.left = body[eeBody::HIT_POINT].pos.x - body[eeBody::HIT_POINT].size.x / 2;
+			body[eeBody::HIT_POINT].shape.top = body[eeBody::HIT_POINT].pos.y - body[eeBody::HIT_POINT].size.y / 2;
+			body[eeBody::HIT_POINT].shape.right = body[eeBody::HIT_POINT].shape.left + body[eeBody::HIT_POINT].size.x;
+			body[eeBody::HIT_POINT].shape.bottom = body[eeBody::HIT_POINT].shape.top + body[eeBody::HIT_POINT].size.y;
 		}
 		break;
 	}
@@ -306,10 +306,10 @@ void King::CreateHitPoint(Body*& body)
 
 bool King::isCollision(Body bodyBottom)
 {
-	if (body[eBody::BOTTOM].shape.left > 450)	  return false;
-	if (body[eBody::BOTTOM].shape.right < 400)  return false;
-	if (body[eBody::BOTTOM].shape.top > 320)	  return false;
-	if (body[eBody::BOTTOM].shape.bottom < 270) return false;
+	if (body[eeBody::BOTTOM].shape.left > 450)	  return false;
+	if (body[eeBody::BOTTOM].shape.right < 400)  return false;
+	if (body[eeBody::BOTTOM].shape.top > 320)	  return false;
+	if (body[eeBody::BOTTOM].shape.bottom < 270) return false;
 
 	return true;
 }
