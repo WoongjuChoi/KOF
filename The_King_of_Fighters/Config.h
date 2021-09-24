@@ -20,10 +20,9 @@ using namespace std;
 enum MoveDir { Left, Right, Up, Down };
 enum eActs { standing, move, weekPunch, weekFoot, strongPunch, strongFoot, hit, die, victory, moveForward, moveBackward, end };
 enum eBody { top, bottom, hitPoint, bodyend };
-enum ePlayer { player1 = -1, player2 = 1 };
+enum ePlayer { player1, player2 };
 enum eCharacter {eHwajai, eYuri, eKing};
 
-enum eDir { p1 = -1, p2 = 1 };
 
 extern HWND g_hWnd;
 extern HINSTANCE g_hInstance;
