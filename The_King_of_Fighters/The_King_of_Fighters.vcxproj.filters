@@ -57,6 +57,9 @@
     <ClCompile Include="King.cpp">
       <Filter>MainGame\KOF_Player</Filter>
     </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>2D Framework\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
@@ -94,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="King.h">
       <Filter>MainGame\KOF_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>2D Framework\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

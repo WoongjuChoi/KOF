@@ -2,6 +2,7 @@
 #include "Singleton.h"
 #include "KeyManager.h"
 #include "SceneManager.h"
+#include "BattleManager.h"
 #include "Image.h"
 #include "Hwajai.h"
 #include "Yuri.h"
@@ -21,6 +22,7 @@ void MainGame::Init()
 
 	// 타이머 셋팅
 	hTimer = (HANDLE)SetTimer(g_hWnd, 0, 10, NULL);
+	char text[128];
 
 	// 백버퍼
 	backBuffer = new Image;
@@ -36,8 +38,8 @@ void MainGame::Init()
 	player1 = new GameObject;
 	player2 = new GameObject;
 
-	CharacterP1 = eCharacter::eYuri;
-	CharacterP2 = eCharacter::eHwajai;
+	CharacterP1 = eCharacter::eHwajai;
+	CharacterP2 = eCharacter::eYuri;
 
 	player1->SetChosenPlayer(ePlayer::player1);
 	player1->SetChosenCharacter(CharacterP1);
@@ -48,6 +50,8 @@ void MainGame::Init()
 
 	player1->Init();
 	player2->Init();
+
+	BattleManager::GetSingleton()->Init();
 
 	// 캐릭터
 	/*player1->Init(ePlayer::player2, eCharacter::eHwajai);
@@ -66,6 +70,7 @@ void MainGame::Update()
 
 	player1->Update();
 	player2->Update();
+
 	/*player1->Update(eCharacter::eYuri);
 	player2->Update(eCharacter::eHwajai);*/
 	/*if (hwajai)
@@ -89,8 +94,15 @@ void MainGame::Render(HDC hdc)
 	/*player1->Render(hBackBufferDC, eCharacter::eYuri);
 	player2->Render(hBackBufferDC, eCharacter::eHwajai);*/
 
+	wsprintf(text, "player1 HP : %d", BattleManager::GetSingleton()->Getplayer1Hp());
+	TextOut(hBackBufferDC, 200, 10, text, strlen(text));
+	wsprintf(text, "player2 HP : %d", BattleManager::GetSingleton()->Getplayer2Hp());
+	TextOut(hBackBufferDC, 200, 40, text, strlen(text));
+
 	player1->Render(hBackBufferDC);
 	player2->Render(hBackBufferDC);
+
+	BattleManager::GetSingleton()->Render(hBackBufferDC);
 
 	//hwajai->Render(hBackBufferDC);
 

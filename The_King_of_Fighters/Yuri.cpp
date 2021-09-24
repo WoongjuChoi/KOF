@@ -1,5 +1,6 @@
 #include "Yuri.h"
 #include "Image.h"
+#include "BattleManager.h"
 #include "KeyManager.h"
 
 void Yuri::Init(ePlayer P)
@@ -9,7 +10,6 @@ void Yuri::Init(ePlayer P)
 
 	imageX = 740;
 	yuri = new Image[eActs::end];
-	body = new Body[eBody::bodyend];
 	maxFrame = 9;
 	yuri[eActs::standing].Init("Image/Yuri/Standing.bmp", (imageX * maxFrame), 770, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 10;
@@ -55,15 +55,14 @@ void Yuri::Init(ePlayer P)
 
 void Yuri::Update()
 {
-	SetBodyPos(body[eBody::bottom], pos.x, pos.y + 90, 10, -10, 0, 0, player);
-	SetBodyPos(body[eBody::top], pos.x, pos.y - size + 90, 30, -10, 5, 0, player);
-	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0, player);
+	BattleManager::GetSingleton()->SetHitBoxPos(0, size/2, size/2 + 10, size/2, size + 40, player, pos);
+	BattleManager::GetSingleton()->SetHitBoxPos(1, 0, 0, 0, 0, player, pos);
 
-	if (IsCollision(body[eBody::bottom]))
+	if (BattleManager::GetSingleton()->Hit())
 	{
 		maxFrame = 4;
 		ActionChange(eActs::hit, maxFrame);
-		pos.x += moveSpeed * 2;
+		pos.x += player * (moveSpeed * 2);
 	}
 
 	if (!delay)
@@ -165,6 +164,7 @@ void Yuri::Update()
 			{
 				action = eActs::standing;
 				delay = false;
+				BattleManager::GetSingleton()->SetIsHit(false);
 				frameX = 0;
 			}
 			elapsedCount = 0;
@@ -176,20 +176,7 @@ void Yuri::Update()
 
 void Yuri::Render(HDC hdc)
 {
-	yuri[action].Render(hdc, pos.x, pos.y, frameX, frameY, ePlayer::player1);
-
-	DrowBodyPos(hdc, body[eBody::bottom]);			//하체부분
-	DrowBodyPos(hdc, body[eBody::top]);				//상체부분
-	DrowBodyPos(hdc, body[eBody::hitPoint]);			//히트박스
-
-
-
-	MoveToEx(hdc, 300, 400, NULL);					//임시로만든 박스
-	LineTo(hdc, 300, 450);
-	LineTo(hdc, 350, 450);
-	LineTo(hdc, 350, 400);
-	LineTo(hdc, 300, 400);
-
+	yuri[action].Render(hdc, pos.x, pos.y, frameX, frameY, player);
 }
 
 void Yuri::Release()
@@ -201,18 +188,6 @@ void Yuri::Release()
 	}
 }
 
-bool Yuri::IsCollision(Body body)
-{
-	//숫자부분은 상대 히트박수 수치
-	if (body.hitBox.left > 450)	return false;
-	if (body.hitBox.right < 400)	return false;
-	if (body.hitBox.top > 450)	return false;
-	if (body.hitBox.bottom < 400)	return false;
-
-
-	return true;
-}
-
 void Yuri::HitBoxPos()
 {
 	switch (action)
@@ -220,25 +195,29 @@ void Yuri::HitBoxPos()
 	case eActs::weekPunch:
 		if (frameX > 3 && frameX < 6)
 		{
-			SetBodyPos(body[eBody::hitPoint], pos.x -50, pos.y -10, 22, -8, 38, -47, ePlayer::player2);
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 80, size / 2, 40, 20, player, pos);
+			BattleManager::GetSingleton()->SetDamage(8);
 		}
 		break;
 	case eActs::strongPunch:
 		if (frameX > 3 && frameX < 7)
 		{
-			SetBodyPos(body[eBody::hitPoint], pos.x - 80, pos.y - 10, 5, 10, 35, -10, ePlayer::player2);
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 130, size / 2, 0, 20, player, pos);
+			BattleManager::GetSingleton()->SetDamage(10);
 		}
 		break;
 	case eActs::weekFoot:
 		if (frameX > 3 && frameX < 7)
 		{
-			SetBodyPos(body[eBody::hitPoint], pos.x - 70, pos.y - 70, 7, -8, 55, size / 2, ePlayer::player2);
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 130, size / 2 + 10, 0, size, player, pos);
+			BattleManager::GetSingleton()->SetDamage(9);
 		}
 		break;
 	case eActs::strongFoot:
 		if (frameX > 3 && frameX < 7)
 		{
-			SetBodyPos(body[eBody::hitPoint], pos.x - 70, pos.y, -30, 0, 0, 0, ePlayer::player2);
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 155, size / 2, 0, 20, player, pos);
+			BattleManager::GetSingleton()->SetDamage(12);
 		}
 		break;
 	}

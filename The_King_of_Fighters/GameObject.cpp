@@ -140,6 +140,7 @@ void GameObject::Render(HDC hdc)
 
 void GameObject::Release()
 {
+
 }
 
 void GameObject::ActionChange(eActs act, int frame)

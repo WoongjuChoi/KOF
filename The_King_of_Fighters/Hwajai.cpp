@@ -1,15 +1,15 @@
 #include "Hwajai.h"
 #include "Image.h"
+#include "BattleManager.h"
 #include "KeyManager.h"
 
-void Hwajai::Init(ePlayer player)
+void Hwajai::Init(ePlayer P)
 {
-	GameObject::SetKey(player);
-	this->player = player;
+	GameObject::SetKey(P);
+	player = P;
 
 	imageX = 880;
 	hwaj = new Image[eActs::end];
-	body = new Body[eBody::bodyend];
 	maxFrame = 9;
 	hwaj[eActs::standing].Init("Image/hwajai/standing.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 7;
@@ -33,26 +33,32 @@ void Hwajai::Init(ePlayer player)
 	frameRate = 5;
 	action = eActs::standing;
 	delay = false;
-	pos.x = WIN_SIZE_X / 5 * 4;
-	pos.y = WIN_SIZE_Y / 4 * 3;
+
+	if (player == ePlayer::player1)
+	{
+		pos.x = WIN_SIZE_X / 4;
+	}
+	else
+	{
+		pos.x = WIN_SIZE_X / 4 * 3;
+	}
+
+	pos.y = WIN_SIZE_Y / 4 * 3 - 10;
 	moveSpeed = 10.0f;
-
-
 
 	size = imageX/8;
 }
 
 void Hwajai::Update()
 {
-	SetBodyPos(body[eBody::bottom], pos.x, pos.y, 15, -10, 0, 0, ePlayer::player2);
-	SetBodyPos(body[eBody::top], pos.x, pos.y - size, 30, -10, 0, 0, ePlayer::player2);
-	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0, ePlayer::player2);
+	BattleManager::GetSingleton()->SetHitBoxPos(0, size / 2, size + 60, size / 2, size - 40, player, pos);
+	BattleManager::GetSingleton()->SetHitBoxPos(1, 0, 0, 0, 0, player, pos);
 
-	if (IsCollision(body[eBody::bottom]))
+	if (BattleManager::GetSingleton()->Hit())
 	{
 		maxFrame = 4;
 		ActionChange(eActs::hit, maxFrame);
-		pos.x += moveSpeed*2;
+		pos.x += player * (moveSpeed * 2);
 	}
 
 	if (!delay)
@@ -142,6 +148,7 @@ void Hwajai::Update()
 			{
 				action = eActs::standing;
 				delay = false;
+				BattleManager::GetSingleton()->SetIsHit(false);
 				frameX = 0;
 			}
 			elapsedCount = 0;
@@ -155,18 +162,6 @@ void Hwajai::Update()
 void Hwajai::Render(HDC hdc)
 {
 		hwaj[action].Render(hdc, pos.x, pos.y, frameX, frameY, player);
-
-		DrowBodyPos(hdc, body[eBody::bottom]);			//하체부분
-		DrowBodyPos(hdc, body[eBody::top]);				//상체부분
-		DrowBodyPos(hdc, body[eBody::hitPoint]);			//히트박스
-
-
-
-		MoveToEx(hdc, 300, 300, NULL);					//임시로만든 박스
-		LineTo(hdc, 300, 350);
-		LineTo(hdc, 350, 350);
-		LineTo(hdc, 350, 300);
-		LineTo(hdc, 300, 300);
 }
 
 void Hwajai::Release()
@@ -178,18 +173,6 @@ void Hwajai::Release()
 	}
 }
 
-bool Hwajai::IsCollision(Body body)
-{
-	//숫자부분은 상대 히트박수 수치
-	if (body.hitBox.left > 350)	return false;
-	if (body.hitBox.right < 300)	return false;
-	if (body.hitBox.top > 350)	return false;
-	if (body.hitBox.bottom < 300)	return false;
-
-
-	return true;
-}
-
 void Hwajai::HitBoxPos()
 {
 	switch (action)
@@ -197,45 +180,29 @@ void Hwajai::HitBoxPos()
 	case eActs::weekPunch:
 		if (frameX > 4 && frameX < 8)
 		{
-			body[eBody::hitPoint].bodyPos.x = pos.x - size;
-			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 22;
-			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 38;
-			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2- 47;
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 145, size + 30, -40, -90, player, pos);
+			BattleManager::GetSingleton()->SetDamage(8);
 		}
 		break;
 	case eActs::strongPunch:
 		if (frameX > 2 && frameX < 6)
 		{
-			body[eBody::hitPoint].bodyPos.x = pos.x - size;
-			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 5;
-			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 42;
-			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 38;
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 160, size + 30, 40, -80, player, pos);
+			BattleManager::GetSingleton()->SetDamage(10);
 		}
 		break;
 	case eActs::weekFoot:
 		if (frameX > 3 && frameX < 7)
 		{
-			body[eBody::hitPoint].bodyPos.x = pos.x - size;
-			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
-			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 55;
-			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 13;
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 145, size + 20, -10, -20, player, pos);
+			BattleManager::GetSingleton()->SetDamage(9);
 		}
 		break;
 	case eActs::strongFoot:
 		if (frameX > 3 && frameX < 7)
 		{
-			body[eBody::hitPoint].bodyPos.x = pos.x - size;
-			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
-			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 45;
-			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 17;
+			BattleManager::GetSingleton()->SetHitBoxPos(1, 155, size + 20, -10, -20, player, pos);
+			BattleManager::GetSingleton()->SetDamage(12);
 		}
 		break;
 	}

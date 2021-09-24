@@ -37,8 +37,6 @@ private:
 	// Ä³¸¯ÅÍ
 	Hwajai* hwajai;
 	Yuri* yuri;
-	/*GameObject* player1;
-	GameObject* player2;*/
 
 public:
 	void Init();

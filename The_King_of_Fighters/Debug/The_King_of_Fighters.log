@@ -1,14 +1,4 @@
-﻿  GameObject.cpp
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(168,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(169,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(170,25): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(171,26): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(172,47): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(173,50): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(176,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(177,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(178,48): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(179,49): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(180,47): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(181,50): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Hwajai.cpp
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(164,38): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(164,31): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   The_King_of_Fighters.vcxproj -> C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\Debug\The_King_of_Fighters.exe
