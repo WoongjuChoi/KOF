@@ -3,50 +3,22 @@
 #include "Config.h"
 #include "GameObject.h"
 
-#define FRAME_RATE 5
-
-enum eMoveType
-{
-	STANDING, MOVE_FOWARD, MOVE_BACKWARD, WEAK_PUNCH, WEAK_KICK, 
-	STRONG_PUNCH, STRONG_KICK, ATTACKED, END
-};
-
-enum eeBody { TOP, BOTTOM, HIT_POINT, BODY_END };
-
 class Image;
 class King : public GameObject
 {
 private:
 	Image* img;
-	int frameX;
-	int frameY;
-	int maxFrame;
-	int elapsedCount;
-	eMoveType moveType;
-	bool bUpdateMove;
 	
-	POINTFLOAT characterPos;
+	POINTFLOAT kingSize;
 
-	struct Body
-	{
-		POINT size;
-		POINTFLOAT pos;
-		RECT shape;
-	};
-	Body* body;
-
+	POINTFLOAT punchPos;
+	POINTFLOAT kickPos;
 	
 public:
-	void Init(ePlayer player, POINTFLOAT charPos);
+	void Init(ePlayer p);
 	void Update();
 	void Render(HDC hdc);
 	void Release();
 
-	void ConstructBody(Body*& body);
-	void UpdateBody(Body*& body);
-	void RenderBody(HDC hdc, Body*& body);
-	void CreateHitPoint(Body*& body);
-
-	bool isCollision(Body bodyBottom);
+	void HitBoxPos();
 };
-
