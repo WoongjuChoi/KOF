@@ -55,9 +55,9 @@ void Yuri::Init(ePlayer P)
 
 void Yuri::Update()
 {
-	SetBodyPos(body[eBody::bottom], pos.x, pos.y + 90, 10, -10, 0, 0, ePlayer::player2);
-	SetBodyPos(body[eBody::top], pos.x, pos.y - size + 90, 30, -10, 5, 0, ePlayer::player2);
-	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0, ePlayer::player2);
+	SetBodyPos(body[eBody::bottom], pos.x, pos.y + 90, 10, -10, 0, 0, player);
+	SetBodyPos(body[eBody::top], pos.x, pos.y - size + 90, 30, -10, 5, 0, player);
+	SetBodyPos(body[eBody::hitPoint], 0, 0, 0, 0, 0, 0, player);
 
 	if (IsCollision(body[eBody::bottom]))
 	{
@@ -204,10 +204,10 @@ void Yuri::Release()
 bool Yuri::IsCollision(Body body)
 {
 	//숫자부분은 상대 히트박수 수치
-	if (body.left > 450)	return false;
-	if (body.right < 400)	return false;
-	if (body.top > 450)	return false;
-	if (body.bottom < 400)	return false;
+	if (body.hitBox.left > 450)	return false;
+	if (body.hitBox.right < 400)	return false;
+	if (body.hitBox.top > 450)	return false;
+	if (body.hitBox.bottom < 400)	return false;
 
 
 	return true;

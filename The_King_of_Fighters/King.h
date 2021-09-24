@@ -3,7 +3,7 @@
 #include "Config.h"
 #include "GameObject.h"
 
-#define FRAME_RATE 6
+#define FRAME_RATE 5
 
 enum eMoveType
 {
@@ -37,7 +37,7 @@ private:
 
 	
 public:
-	void Init();
+	void Init(ePlayer player, POINTFLOAT charPos);
 	void Update();
 	void Render(HDC hdc);
 	void Release();

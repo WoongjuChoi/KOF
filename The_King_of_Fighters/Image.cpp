@@ -249,7 +249,7 @@ void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, ePlaye
     }
 }
 
-void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY)
+void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player)
 {
     if (isTransparent)
     {

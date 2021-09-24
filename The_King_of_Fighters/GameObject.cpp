@@ -1,65 +1,145 @@
 #include "GameObject.h"
+#include "Hwajai.h"
+#include "Yuri.h"
+#include "King.h"
 
-void GameObject::Init(ePlayer player, eCharacter charecter)
+void GameObject::Init()
 {
-	switch (charecter)
+	switch (chosenPlayer)
 	{
-	case eHwajai:
-		hwajai = new Hwajai;
-		hwajai->Init(player);
+	case player1:
+		charPos.x = WIN_SIZE_X / 5;
+		charPos.y = WIN_SIZE_Y * 3 / 4;
+
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai = new Hwajai;
+			hwajai->Init(ePlayer::player1);
+			break;
+
+		case eYuri:
+			yuri = new Yuri;
+			yuri->Init(ePlayer::player1);
+			break;
+
+		case eKing:
+			king = new King;
+			king->Init(ePlayer::player1, charPos);
+			break;
+		}
 		break;
-	case eYuri:
-		yuri = new Yuri;
-		yuri->Init(player);
-		break;
-	case eKing:
+
+	case player2:
+		charPos.x = WIN_SIZE_X * 4 / 5;
+		charPos.y = WIN_SIZE_Y * 3 / 4;
+
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai = new Hwajai;
+			hwajai->Init(ePlayer::player2);
+			break;
+
+		case eYuri:
+			yuri = new Yuri;
+			yuri->Init(ePlayer::player2);
+			break;
+
+		case eKing:
+			king = new King;
+			king->Init(ePlayer::player2, charPos);
+			break;
+		}
+
 		break;
 	}
 }
 
-void GameObject::Update(eCharacter charecter)
+void GameObject::Update()
 {
-	switch (charecter)
+	switch (chosenPlayer)
 	{
-	case eHwajai:
-		hwajai->Update();
+	case player1:
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai->Update();
+			break;
+
+		case eYuri:
+			yuri->Update();
+			break;
+
+		case eKing:
+			king->Update();
+			break;
+		}
 		break;
-	case eYuri:
-		yuri->Update();
-		break;
-	case eKing:
+
+	case player2:
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai->Update();
+			break;
+
+		case eYuri:
+			yuri->Update();
+			break;
+
+		case eKing:
+			king->Update();
+			break;
+		}
+
 		break;
 	}
 }
 
-void GameObject::Render(HDC hdc, eCharacter charecter)
+void GameObject::Render(HDC hdc)
 {
-	switch (charecter)
+	switch (chosenPlayer)
 	{
-	case eHwajai:
-		hwajai->Render(hdc);
+	case player1:
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai->Render(hdc);
+			break;
+
+		case eYuri:
+			yuri->Render(hdc);
+			break;
+
+		case eKing:
+			king->Render(hdc);
+			break;
+		}
 		break;
-	case eYuri:
-		yuri->Render(hdc);
-		break;
-	case eKing:
+
+	case player2:
+		switch (chosenCharacter)
+		{
+		case eHwajai:
+			hwajai->Render(hdc);
+			break;
+
+		case eYuri:
+			yuri->Render(hdc);
+			break;
+
+		case eKing:
+			king->Render(hdc);
+			break;
+		}
+
 		break;
 	}
 }
 
-void GameObject::Release(eCharacter charecter)
+void GameObject::Release()
 {
-	switch (charecter)
-	{
-	case eHwajai:
-		hwajai->Release();
-		break;
-	case eYuri:
-		yuri->Release();
-		break;
-	case eKing:
-		break;
-	}
 }
 
 void GameObject::ActionChange(eActs act, int frame)
@@ -73,11 +153,11 @@ void GameObject::ActionChange(eActs act, int frame)
 
 void GameObject::DrowBodyPos(HDC hdc, Body body)
 {
-	MoveToEx(hdc, body.left, body.top, NULL);
-	LineTo(hdc, body.left, body.bottom);
-	LineTo(hdc, body.right, body.bottom);
-	LineTo(hdc, body.right, body.top);
-	LineTo(hdc, body.left, body.top);
+	MoveToEx(hdc, body.hitBox.left, body.hitBox.top, NULL);
+	LineTo(hdc, body.hitBox.left, body.hitBox.bottom);
+	LineTo(hdc, body.hitBox.right, body.hitBox.bottom);
+	LineTo(hdc, body.hitBox.right, body.hitBox.top);
+	LineTo(hdc, body.hitBox.left, body.hitBox.top);
 }
 
 void GameObject::SetBodyPos(Body& body, int posX, int posY, int leftPos, int rightPos, int topPos, int bottomPos, ePlayer player)
@@ -87,18 +167,18 @@ void GameObject::SetBodyPos(Body& body, int posX, int posY, int leftPos, int rig
 	case ePlayer::player1:
 		body.bodyPos.x = -posX;
 		body.bodyPos.y = posY;
-		body.left = -(body.bodyPos.x - size / 2 + leftPos);
-		body.right = -(body.bodyPos.x + size / 2 + rightPos);
-		body.top = body.bodyPos.y - size / 2 + topPos;
-		body.bottom = body.bodyPos.y + size / 2 + bottomPos;
+		body.hitBox.left = -(body.bodyPos.x - size / 2 + leftPos);
+		body.hitBox.right = -(body.bodyPos.x + size / 2 + rightPos);
+		body.hitBox.top = body.bodyPos.y - size / 2 + topPos;
+		body.hitBox.bottom = body.bodyPos.y + size / 2 + bottomPos;
 		break;
 	case ePlayer::player2:
 		body.bodyPos.x = posX;
 		body.bodyPos.y = posY;
-		body.left = body.bodyPos.x - size / 2 + leftPos;
-		body.right = body.bodyPos.x + size / 2 + rightPos;
-		body.top = body.bodyPos.y - size / 2 + topPos;
-		body.bottom = body.bodyPos.y + size / 2 + bottomPos;
+		body.hitBox.left = body.bodyPos.x - size / 2 + leftPos;
+		body.hitBox.right = body.bodyPos.x + size / 2 + rightPos;
+		body.hitBox.top = body.bodyPos.y - size / 2 + topPos;
+		body.hitBox.bottom = body.bodyPos.y + size / 2 + bottomPos;
 		break;
 	}
 }

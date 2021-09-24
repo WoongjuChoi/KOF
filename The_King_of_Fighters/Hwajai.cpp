@@ -181,10 +181,10 @@ void Hwajai::Release()
 bool Hwajai::IsCollision(Body body)
 {
 	//숫자부분은 상대 히트박수 수치
-	if (body.left > 350)	return false;
-	if (body.right < 300)	return false;
-	if (body.top > 350)	return false;
-	if (body.bottom < 300)	return false;
+	if (body.hitBox.left > 350)	return false;
+	if (body.hitBox.right < 300)	return false;
+	if (body.hitBox.top > 350)	return false;
+	if (body.hitBox.bottom < 300)	return false;
 
 
 	return true;
@@ -199,10 +199,10 @@ void Hwajai::HitBoxPos()
 		{
 			body[eBody::hitPoint].bodyPos.x = pos.x - size;
 			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].left = body[eBody::hitPoint].bodyPos.x - size / 2			 + 22;
-			body[eBody::hitPoint].right = body[eBody::hitPoint].bodyPos.x + size / 2			 - 8;
-			body[eBody::hitPoint].top = body[eBody::hitPoint].bodyPos.y - size / 2			 + 38;
-			body[eBody::hitPoint].bottom = body[eBody::hitPoint].bodyPos.y + size / 2			- 47;
+			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 22;
+			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
+			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 38;
+			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2- 47;
 		}
 		break;
 	case eActs::strongPunch:
@@ -210,10 +210,10 @@ void Hwajai::HitBoxPos()
 		{
 			body[eBody::hitPoint].bodyPos.x = pos.x - size;
 			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].left = body[eBody::hitPoint].bodyPos.x - size / 2 + 5;
-			body[eBody::hitPoint].right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].top = body[eBody::hitPoint].bodyPos.y - size / 2 + 42;
-			body[eBody::hitPoint].bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 38;
+			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 5;
+			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
+			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 42;
+			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 38;
 		}
 		break;
 	case eActs::weekFoot:
@@ -221,10 +221,10 @@ void Hwajai::HitBoxPos()
 		{
 			body[eBody::hitPoint].bodyPos.x = pos.x - size;
 			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
-			body[eBody::hitPoint].right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].top = body[eBody::hitPoint].bodyPos.y - size / 2 + 55;
-			body[eBody::hitPoint].bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 13;
+			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
+			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
+			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 55;
+			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 13;
 		}
 		break;
 	case eActs::strongFoot:
@@ -232,10 +232,10 @@ void Hwajai::HitBoxPos()
 		{
 			body[eBody::hitPoint].bodyPos.x = pos.x - size;
 			body[eBody::hitPoint].bodyPos.y = pos.y - size;
-			body[eBody::hitPoint].left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
-			body[eBody::hitPoint].right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
-			body[eBody::hitPoint].top = body[eBody::hitPoint].bodyPos.y - size / 2 + 45;
-			body[eBody::hitPoint].bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 17;
+			body[eBody::hitPoint].hitBox.left = body[eBody::hitPoint].bodyPos.x - size / 2 + 7;
+			body[eBody::hitPoint].hitBox.right = body[eBody::hitPoint].bodyPos.x + size / 2 - 8;
+			body[eBody::hitPoint].hitBox.top = body[eBody::hitPoint].bodyPos.y - size / 2 + 45;
+			body[eBody::hitPoint].hitBox.bottom = body[eBody::hitPoint].bodyPos.y + size / 2 - 17;
 		}
 		break;
 	}

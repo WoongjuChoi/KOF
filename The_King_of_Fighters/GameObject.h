@@ -1,15 +1,17 @@
 #pragma once
 #include "GameEntity.h"
 #include "Config.h"
-#include "Hwajai.h"
-#include "Yuri.h"
+#include <windef.h>
 
 struct Body
 {
-	int left, top, right, bottom;
+	RECT hitBox;
 	POINTFLOAT bodyPos;
 };
 
+class Yuri;
+class King;
+class Hwajai;
 class GameObject : public GameEntity
 {
 protected:
@@ -28,16 +30,21 @@ protected:
 	ePlayer player;
 	GameObject* target;
 
-	Hwajai* hwajai = nullptr;
-	Yuri* yuri = nullptr;
-
 	char left, right, wP, sP, wK, sK;
+	POINTFLOAT charPos;
+	ePlayer chosenPlayer;
+	eCharacter chosenCharacter;
+	eDir dir;
+
+	King* king;
+	Yuri* yuri;
+	Hwajai* hwajai;
 
 public:
-	void Init(ePlayer player, eCharacter charecter);
-	void Update(eCharacter charecter);
-	void Render(HDC hdc, eCharacter charecter);
-	void Release(eCharacter charecter);
+	void Init();
+	void Update();
+	void Render(HDC hdc);
+	void Release();
 
 	inline void SetPos(POINTFLOAT pos) { this->pos = pos; }
 	inline POINTFLOAT GetPos() { return this->pos; }
@@ -48,6 +55,9 @@ public:
 	void DrowBodyPos(HDC hdc, Body body);
 	void SetBodyPos(Body& body, int posX, int posY, int leftPos, int rightPos, int topPos, int bottomPos, ePlayer player);
 	void SetKey(ePlayer player);
+
+	inline void SetChosenPlayer(ePlayer chosenPlayer) { this->chosenPlayer = chosenPlayer; }
+	inline void SetChosenCharacter(eCharacter chosenCharacter) { this->chosenCharacter = chosenCharacter; }
 
 	GameObject();
 	~GameObject();

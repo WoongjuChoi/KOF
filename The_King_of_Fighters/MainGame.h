@@ -6,6 +6,7 @@
 class Image;
 class Yuri;
 class Hwajai;
+class GameObject;
 class MainGame : public GameEntity
 {
 private:
@@ -26,11 +27,18 @@ private:
 	// 배경 이미지
 	Image* backGround;
 
-	// 캐릭터
-	/*Hwajai* hwajai;
-	Yuri* yuri;*/
+	// 플레이어 객체
+	eCharacter CharacterP1;
+	eCharacter CharacterP2;
+
 	GameObject* player1;
 	GameObject* player2;
+
+	// 캐릭터
+	Hwajai* hwajai;
+	Yuri* yuri;
+	/*GameObject* player1;
+	GameObject* player2;*/
 
 public:
 	void Init();

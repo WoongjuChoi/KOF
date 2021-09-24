@@ -2,18 +2,32 @@
 #include "Image.h"
 #include "KeyManager.h"
 
-void King::Init()
+void King::Init(ePlayer player, POINTFLOAT charPos)
 {
+	chosenPlayer = player;
+	SetKey(player);
+	characterPos.x = charPos.x;
+	characterPos.y = charPos.y;
+	switch (chosenPlayer)
+	{
+	case player1:
+		dir = eDir::p1;
+		break;
+	case player2:
+		dir = eDir::p2;
+		break;
+	}
+
 	// 킹 이미지 초기화
 	img = new Image[eMoveType::END];
-	img[eMoveType::STANDING].Init("King/King_Standing.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
-	img[eMoveType::MOVE_FOWARD].Init("King/King_MoveFoward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
-	img[eMoveType::MOVE_BACKWARD].Init("King/King_MoveBackward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
-	img[eMoveType::WEAK_PUNCH].Init("King/King_WeakPunch.bmp", 3255, 576, 7, 1, true, RGB(255, 0, 255));
-	img[eMoveType::WEAK_KICK].Init("King/King_WeakKick.bmp", 3720, 576, 8, 1, true, RGB(255, 0, 255));
-	img[eMoveType::STRONG_PUNCH].Init("King/King_StrongPunch.bmp", 5115, 576, 11, 1, true, RGB(255, 0, 255));
-	img[eMoveType::STRONG_KICK].Init("King/King_StrongKick.bmp", 6975, 576, 15, 1, true, RGB(255, 0, 255));
-	img[eMoveType::ATTACKED].Init("King/King_Attacked.bmp", 1395, 576, 3, 1, true, RGB(255, 0, 255));
+	img[eMoveType::STANDING].Init("Image/King/King_Standing.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	img[eMoveType::MOVE_FOWARD].Init("Image/King/King_MoveFoward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	img[eMoveType::MOVE_BACKWARD].Init("Image/King/King_MoveBackward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	img[eMoveType::WEAK_PUNCH].Init("Image/King/King_WeakPunch.bmp", 3255, 576, 7, 1, true, RGB(255, 0, 255));
+	img[eMoveType::WEAK_KICK].Init("Image/King/King_WeakKick.bmp", 3720, 576, 8, 1, true, RGB(255, 0, 255));
+	img[eMoveType::STRONG_PUNCH].Init("Image/King/King_StrongPunch.bmp", 5115, 576, 11, 1, true, RGB(255, 0, 255));
+	img[eMoveType::STRONG_KICK].Init("Image/King/King_StrongKick.bmp", 6975, 576, 15, 1, true, RGB(255, 0, 255));
+	img[eMoveType::ATTACKED].Init("Image/King/King_Attacked.bmp", 1395, 576, 3, 1, true, RGB(255, 0, 255));
 
 	frameX = 0;
 	frameY = 0;
@@ -23,8 +37,7 @@ void King::Init()
 	moveSpeed = 10;
 	bUpdateMove = false;
 
-	characterPos.x = (WIN_SIZE_X / 2) ;
-	characterPos.y = (WIN_SIZE_Y / 2) ;
+	
 
 	// 킹 캐릭터 상단, 하단 상자 만들기 & 히트상자 초기화
 	body = new Body[eeBody::BODY_END];
@@ -47,7 +60,7 @@ void King::Update()
 	// 킹 움직임, 공격 이미지 업데이트
 	if (bUpdateMove == false)
 	{
-		if (KeyManager::GetSingleton()->IsStayKeyDown('A'))
+		if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
 			maxFrame = 10;
 			elapsedCount++;
@@ -63,7 +76,7 @@ void King::Update()
 			}
 			moveType = eMoveType::MOVE_BACKWARD;
 		}
-		else if (KeyManager::GetSingleton()->IsStayKeyDown('D'))
+		else if (KeyManager::GetSingleton()->IsStayKeyDown(right))
 		{
 			maxFrame = 10;
 			elapsedCount++;
@@ -79,7 +92,7 @@ void King::Update()
 			}
 			moveType = eMoveType::MOVE_FOWARD;
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('R'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(wP))
 		{
 			maxFrame = 7;
 			moveType = eMoveType::WEAK_PUNCH;
@@ -87,21 +100,21 @@ void King::Update()
 			bUpdateMove = true;
 			
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('T'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(sP))
 		{
 			maxFrame = 11;
 			moveType = eMoveType::STRONG_PUNCH;
 			frameX = 0;
 			bUpdateMove = true;
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('F'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(wK))
 		{
 			maxFrame = 8;
 			moveType = eMoveType::WEAK_KICK;
 			frameX = 0;
 			bUpdateMove = true;
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('G'))
+		else if (KeyManager::GetSingleton()->IsOnceKeyDown(sK))
 		{
 			maxFrame = 15;
 			moveType = eMoveType::STRONG_KICK;
@@ -141,7 +154,7 @@ void King::Update()
 	}
 
 	// 킹 캐릭터 상단, 하단 상자 업데이트
-	UpdateBody(body);
+	ConstructBody(body);
 
 	// 킹 히트포인트 업데이트
 	CreateHitPoint(body);
@@ -153,7 +166,7 @@ void King::Render(HDC hdc)
 
 	if (img)
 	{
-		img[moveType].KingRender(hdc, characterPos.x, characterPos.y, frameX, frameY);
+		img[moveType].KingRender(hdc, characterPos.x, characterPos.y, frameX, frameY, chosenPlayer);
 	}
 
 	Rectangle(hdc, 400, 270, 450, 320);

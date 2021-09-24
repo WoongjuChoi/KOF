@@ -1,87 +1,14 @@
 ﻿  GameObject.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(8,1): error C2504: 'GameObject': 기본 클래스를 정의하지 않았습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,7): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,7): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,12): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(20,24): error C2061: 구문 오류: 식별자 'Body'
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(7,1): error C2504: 'GameObject': 기본 클래스를 정의하지 않았습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,6): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,6): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,12): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(20,24): error C2061: 구문 오류: 식별자 'Body'
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(88,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(89,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(90,15): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(91,16): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(92,40): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(93,43): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(96,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(97,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(98,41): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(99,42): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(100,40): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.cpp(101,43): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Hwajai.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(7,1): error C2504: 'GameObject': 기본 클래스를 정의하지 않았습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,6): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,6): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(10,12): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.h(20,24): error C2061: 구문 오류: 식별자 'Body'
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(31,8): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(31,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(31,26): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(47,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(47,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(48,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(48,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(157,38): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(157,31): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(202,79): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(203,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(204,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(205,80): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(213,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(214,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(215,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(216,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(224,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(225,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(226,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(227,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(235,76): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(236,77): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(237,75): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.cpp(238,78): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  main.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(32,12): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(32,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(32,21): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(33,12): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(33,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.h(33,21): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-  MainGame.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\MainGame.cpp : fatal error C1041: 프로그램 데이터베이스 'C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Debug\vc142.pdb'을(를) 열 수 없습니다. 여러 CL.EXE에서 동일한 .PDB 파일에 쓰는 경우 /FS를 사용하십시오.
-  Yuri.cpp
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(8,1): error C2504: 'GameObject': 기본 클래스를 정의하지 않았습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,7): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,7): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(11,12): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Hwajai.h(20,24): error C2061: 구문 오류: 식별자 'Body'
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(32,6): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(32,6): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\GameObject.h(32,22): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(58,47): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(58,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(59,51): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(59,34): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(179,37): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(179,30): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(223,55): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(223,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(229,56): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(229,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(235,56): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(235,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(241,53): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\dndwn\OneDrive\바탕 화면\KOF\KOF\The_King_of_Fighters\Yuri.cpp(241,44): warning C4244: '인수': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(168,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(169,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(170,25): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(171,26): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(172,47): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(173,50): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(176,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(177,20): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(178,48): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(179,49): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(180,47): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\GameObject.cpp(181,50): warning C4244: '=': 'FLOAT'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  The_King_of_Fighters.vcxproj -> C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\Debug\The_King_of_Fighters.exe
