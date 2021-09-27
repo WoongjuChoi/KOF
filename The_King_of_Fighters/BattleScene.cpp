@@ -33,9 +33,9 @@ void BattleScene::Render(HDC hdc)
 		/*battleImage[stage].BattleRender(hdc, 0, 0);*/
 		battleImage[HP_bar].BattleRender(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 10);
 		battleImage[HP_gage_p1].HpRender(hdc, WIN_SIZE_X / 2 - 134, WIN_SIZE_Y / 10 - 12,
-			hpCalculate, HPdamageP1);
+			hpCalculate, HPdamageP1, ePlayer::player1);
 		battleImage[HP_gage_p2].HpRender(hdc, WIN_SIZE_X / 2 + 134, WIN_SIZE_Y / 10 - 12,
-			hpCalculate, HPdamageP2);
+			hpCalculate, HPdamageP2, ePlayer::player2);
 		/*battleImage[HP_gage_p1].BattleRender(hdc, WIN_SIZE_X / 2 - 134, WIN_SIZE_Y / 10 - 12);
 		battleImage[HP_gage_p2].BattleRender(hdc, WIN_SIZE_X / 2 + 134, WIN_SIZE_Y / 10 - 12);*/
 		battleImage[time_infinite].BattleRender(hdc, WIN_SIZE_X / 2 + 9, 186);

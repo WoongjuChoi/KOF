@@ -368,23 +368,42 @@ void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, eP
     }
 }
 
-void Image::HpRender(HDC hdc, int destX, int destY, float hpCalculate, int damage)
+void Image::HpRender(HDC hdc, int destX, int destY, float hpCalculate, int damage,  ePlayer player)
 {
 
     if (isTransparent)
     {
-        GdiTransparentBlt(
-            hdc,
-            destX - imageInfo->width / 2 + hpCalculate * damage,
-            destY - imageInfo->height / 2,
-            imageInfo->width - hpCalculate * damage,
-            imageInfo->height,
+        if (player == ePlayer::player1)
+        {
+            GdiTransparentBlt(
+                hdc,
+                destX - imageInfo->width / 2 + hpCalculate * damage,
+                destY - imageInfo->height / 2,
+                imageInfo->width - hpCalculate * damage,
+                imageInfo->height,
 
-            imageInfo->hMemDc,
-            0 + hpCalculate * damage, 0,
-            imageInfo->width - hpCalculate * damage, imageInfo->height,
-            transColor
-        );
+                imageInfo->hMemDc,
+                0 + hpCalculate * damage, 0,
+                imageInfo->width - hpCalculate * damage, imageInfo->height,
+                transColor
+            );
+        }
+        else
+        {
+			GdiTransparentBlt(
+				hdc,
+				destX - imageInfo->width / 2 ,
+				destY - imageInfo->height / 2,
+				imageInfo->width - hpCalculate * damage,
+				imageInfo->height,
+
+				imageInfo->hMemDc,
+				0 , 0,
+				imageInfo->width - hpCalculate * damage, imageInfo->height,
+				transColor
+			);
+        }
+        
     }
 
 }
