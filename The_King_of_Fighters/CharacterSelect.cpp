@@ -158,11 +158,15 @@ void CharacterSelect::Release()
 {
 }
 
-int CharacterSelect::SelectP1Card()
+eCharacter CharacterSelect::SelectP1Card()
 {
-	return select[p1];
+	if (select[p1] == 0) return eCharacter::eHwajai;
+	if (select[p1] == 1) return eCharacter::eKing;
+	if (select[p1] == 2) return eCharacter::eYuri;
 }
-int CharacterSelect::SelectP2Card()
+eCharacter CharacterSelect::SelectP2Card()
 {
-	return select[p2];
+	if (select[p2] == 0) return eCharacter::eHwajai;
+	if (select[p2] == 1) return eCharacter::eKing;
+	if (select[p2] == 2) return eCharacter::eYuri;
 }

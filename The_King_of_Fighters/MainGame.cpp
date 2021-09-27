@@ -40,20 +40,12 @@ void MainGame::Init()
 	player1 = new GameObject;
 	player2 = new GameObject;
 
-	CharacterP1 = eCharacter::eYuri;
 	//CharacterP1 = eCharacter::eHwajai;
 	//CharacterP2 = eCharacter::eHwajai;
-	CharacterP2 = eCharacter::eYuri;
 
 	player1->SetChosenPlayer(ePlayer::player1);
-	player1->SetChosenCharacter(CharacterP1);
 
 	player2->SetChosenPlayer(ePlayer::player2);
-	player2->SetChosenCharacter(CharacterP2);
-
-
-	player1->Init();
-	player2->Init();
 
 	BattleManager::GetSingleton()->Init();
 
@@ -118,6 +110,12 @@ void MainGame::Render(HDC hdc)
 		chSelect->Render(hBackBufferDC);
 		if (SceneManager::GetSingleton()->getReadyChangeScene() == true)
 		{
+			CharacterP1 = chSelect->SelectP1Card();
+			CharacterP2 = chSelect->SelectP2Card();
+			player1->SetChosenCharacter(CharacterP1);
+			player2->SetChosenCharacter(CharacterP2);
+			player1->Init();
+			player2->Init();
 			SceneManager::GetSingleton()->setScene(eScene::battle);
 		}
 	}

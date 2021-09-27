@@ -26,8 +26,8 @@ public:
 	void Render(HDC hdc);
 	void Release();
 
-	int SelectP1Card();
-	int SelectP2Card();
+	eCharacter SelectP1Card();
+	eCharacter SelectP2Card();
 
 	//CharacterSelect();
 	//~CharacterSelect();
