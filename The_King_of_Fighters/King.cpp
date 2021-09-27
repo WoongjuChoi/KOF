@@ -63,30 +63,6 @@ void King::Update()
 		maxFrame = 3;
 		ActionChange(eActs::hit, maxFrame);
 		pos.x += player * (moveSpeed * 2);
-
-		switch (player)
-		{
-		case player1:
-			if (BattleManager::GetSingleton()->Getplayer1Lose())
-			{
-				ActionChange(eActs::die, 11);
-			}
-			else if (BattleManager::GetSingleton()->Getplayer1Win())
-			{
-				ActionChange(eActs::victory, 6);
-			}
-			break;
-		case player2:
-			if (BattleManager::GetSingleton()->Getplayer2Lose())
-			{
-				ActionChange(eActs::die, 11);
-			}
-			else if (BattleManager::GetSingleton()->Getplayer2Win())
-			{
-				ActionChange(eActs::victory, 6);
-			}
-			break;
-		}
 	}
 
 	// 킹 움직임, 공격 이미지 업데이트
@@ -164,6 +140,30 @@ void King::Update()
 				}
 				elapsedCount = 0;
 			}
+		}
+
+		switch (player)
+		{
+		case player1:
+			if (BattleManager::GetSingleton()->Getplayer1Lose())
+			{
+				ActionChange(eActs::die, 11);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer1Win())
+			{
+				ActionChange(eActs::victory, 6);
+			}
+			break;
+		case player2:
+			if (BattleManager::GetSingleton()->Getplayer2Lose())
+			{
+				ActionChange(eActs::die, 11);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer2Win())
+			{
+				ActionChange(eActs::victory, 6);
+			}
+			break;
 		}
 	}
 	else
