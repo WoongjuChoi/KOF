@@ -10,7 +10,7 @@ void King::Init(ePlayer p)
 
 	// 킹 이미지 초기화
 	img = new Image[eActs::end];
-	img[eActs::standing].Init("Image/King/King_Standing.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	img[eActs::standing].Init("Image/King/King_Standing.bmp", 3720, 576, 8, 1, true, RGB(255, 0, 255));
 	img[eActs::moveForward].Init("Image/King/King_MoveFoward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
 	img[eActs::moveBackward].Init("Image/King/King_MoveBackward.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
 	img[eActs::weekPunch].Init("Image/King/King_WeakPunch.bmp", 3255, 576, 7, 1, true, RGB(255, 0, 255));
@@ -21,7 +21,7 @@ void King::Init(ePlayer p)
 	
 	frameX = frameY = 0;
 	elapsedCount = 0;
-	maxFrame = 9;
+	maxFrame = 8;
 	frameRate = 5;
 	action = eActs::standing;
 	moveSpeed = 10.0f;
@@ -127,7 +127,7 @@ void King::Update()
 		else
 		{
 			action = eActs::standing;
-			maxFrame = 10;
+			maxFrame = 8;
 			elapsedCount++;
 			if (elapsedCount >= frameRate)
 			{
