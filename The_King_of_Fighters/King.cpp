@@ -18,7 +18,9 @@ void King::Init(ePlayer p)
 	img[eActs::strongPunch].Init("Image/King/King_StrongPunch.bmp", 5115, 576, 11, 1, true, RGB(255, 0, 255));
 	img[eActs::strongFoot].Init("Image/King/King_StrongKick.bmp", 6975, 576, 15, 1, true, RGB(255, 0, 255));
 	img[eActs::hit].Init("Image/King/King_Attacked.bmp", 1395, 576, 3, 1, true, RGB(255, 0, 255));
-	
+	img[eActs::victory].Init("Image/King/King_Victory.bmp", 3255, 576, 7, 1, true, RGB(255, 0, 255));
+	img[eActs::die].Init("Image/King/King_Defeat.bmp", 5580, 576, 12, 1, true, RGB(255, 0, 255));
+
 	frameX = frameY = 0;
 	elapsedCount = 0;
 	maxFrame = 8;
@@ -61,6 +63,30 @@ void King::Update()
 		maxFrame = 3;
 		ActionChange(eActs::hit, maxFrame);
 		pos.x += player * (moveSpeed * 2);
+
+		switch (player)
+		{
+		case player1:
+			if (BattleManager::GetSingleton()->Getplayer1Lose())
+			{
+				ActionChange(eActs::die, 11);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer1Win())
+			{
+				ActionChange(eActs::victory, 6);
+			}
+			break;
+		case player2:
+			if (BattleManager::GetSingleton()->Getplayer2Lose())
+			{
+				ActionChange(eActs::die, 11);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer2Win())
+			{
+				ActionChange(eActs::victory, 6);
+			}
+			break;
+		}
 	}
 
 	// 킹 움직임, 공격 이미지 업데이트
@@ -148,10 +174,18 @@ void King::Update()
 			frameX++;
 			if (frameX >= maxFrame)
 			{
-				action = eActs::standing;
-				delay = false;
-				frameX = 0;
-				BattleManager::GetSingleton()->SetIsHit(false);
+				if (action == eActs::die || action == eActs::victory)
+				{
+					frameX = maxFrame;
+				}
+				else
+				{
+					action = eActs::standing;
+					delay = false;
+					frameX = 0;
+					BattleManager::GetSingleton()->SetIsHit(false);
+				}
+				
 			}
 			elapsedCount = 0;
 		}
