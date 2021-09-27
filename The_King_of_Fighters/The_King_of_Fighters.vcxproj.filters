@@ -36,9 +36,6 @@
     <ClCompile Include="KeyManager.cpp">
       <Filter>2D Framework\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>2D Framework\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="GameEntity.cpp">
       <Filter>2D Framework</Filter>
     </ClCompile>
@@ -60,6 +57,15 @@
     <ClCompile Include="BattleManager.cpp">
       <Filter>2D Framework\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>2D Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>2D Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>2D Framework\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h">
@@ -75,9 +81,6 @@
       <Filter>2D Framework\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
-      <Filter>2D Framework\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
       <Filter>2D Framework\Manager</Filter>
     </ClInclude>
     <ClInclude Include="GameEntity.h">
@@ -99,6 +102,15 @@
       <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
     <ClInclude Include="BattleManager.h">
+      <Filter>2D Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>2D Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>2D Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
       <Filter>2D Framework\Manager</Filter>
     </ClInclude>
   </ItemGroup>

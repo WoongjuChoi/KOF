@@ -249,11 +249,11 @@ void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, ePlaye
     }
 }
 
-void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player)
+void Image::Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool scene)
 {
     if (isTransparent)
     {
-        if (player == ePlayer::player1)
+        if (scene)
         {
             StretchBlt(
                 reverseDc,
@@ -262,18 +262,18 @@ void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, eP
                 (imageInfo->frameWidth),
                 (imageInfo->frameHeight),
                 imageInfo->hMemDc,
-                imageInfo->frameWidth * (frameX + 1),
+                imageInfo->frameWidth * frameX,
                 imageInfo->frameHeight * frameY,
-                -imageInfo->frameWidth,
+                imageInfo->frameWidth,
                 imageInfo->frameHeight,
                 SRCCOPY);
 
             GdiTransparentBlt(
                 hdc,
-                destX - 235,
-                destY - 313,
-                (imageInfo->frameWidth),
-                (imageInfo->frameHeight),      // 전체 프레임 수
+                0,
+                0,
+                WIN_SIZE_X,
+                WIN_SIZE_Y,      // 전체 프레임 수
 
                 reverseDc,
                 (imageInfo->frameWidth) * frameX,
@@ -287,8 +287,8 @@ void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, eP
         {
             GdiTransparentBlt(
                 hdc,
-                destX - 235,
-                destY - 313,
+                destX - (imageInfo->frameWidth / 2),
+                destY - (imageInfo->frameHeight / 2),
                 (imageInfo->frameWidth),
                 (imageInfo->frameHeight),      // 전체 프레임 수
 
@@ -300,5 +300,38 @@ void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, eP
                 transColor
             );
         }
+    }
+    else
+    {
+        BitBlt(hdc,            // 복사 목적지 DC
+            destX - (imageInfo->width / 2),            // 복사될 비트맵의 시작 위치 x
+            destY - (imageInfo->height / 2),            // 복사될 비트맵의 시작 위치 y
+            imageInfo->width,   // 원본 복사할 가로 크기
+            imageInfo->height,   // 원본 복사할 세로 크기
+            imageInfo->hMemDc,   // 원본 DC
+            0,               // 원본 비트맵 복사 시작 위치 x
+            0,               // 원본 비트맵 복사 시작 위치 y
+            SRCCOPY);         // 복사 옵션
+    }
+}
+
+
+
+void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player)
+{
+    if (isTransparent)
+    {
+        GdiTransparentBlt(
+            hdc,
+            destX - 235,
+            destY - 313,
+            imageInfo->frameWidth, imageInfo->frameHeight,	// 전체 프레임 수 를 각각 저장해보자
+
+            imageInfo->hMemDc,
+            imageInfo->frameWidth * frameX,
+            imageInfo->frameHeight * frameY,
+            imageInfo->frameWidth, imageInfo->frameHeight,
+            transColor
+        );
     }
 }

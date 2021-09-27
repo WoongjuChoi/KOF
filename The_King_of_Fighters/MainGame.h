@@ -7,6 +7,8 @@ class Image;
 class Yuri;
 class Hwajai;
 class GameObject;
+class TitleScene;
+class CharacterSelect;
 class MainGame : public GameEntity
 {
 private:
@@ -37,6 +39,12 @@ private:
 	// 캐릭터
 	Hwajai* hwajai;
 	Yuri* yuri;
+	/*GameObject* player1;
+	GameObject* player2;*/
+
+	//타이틀
+	TitleScene* titleScene;
+	CharacterSelect* chSelect;
 
 public:
 	void Init();

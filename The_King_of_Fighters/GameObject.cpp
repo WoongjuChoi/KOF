@@ -8,6 +8,8 @@ void GameObject::Init()
 	switch (chosenPlayer)
 	{
 	case player1:
+		charPos.x = WIN_SIZE_X / 5;
+		charPos.y = WIN_SIZE_Y * 3 / 4;
 
 		switch (chosenCharacter)
 		{
@@ -29,6 +31,8 @@ void GameObject::Init()
 		break;
 
 	case player2:
+		charPos.x = WIN_SIZE_X * 4 / 5;
+		charPos.y = WIN_SIZE_Y * 3 / 4;
 
 		switch (chosenCharacter)
 		{
@@ -136,7 +140,6 @@ void GameObject::Render(HDC hdc)
 
 void GameObject::Release()
 {
-
 }
 
 void GameObject::ActionChange(eActs act, int frame)
@@ -146,29 +149,6 @@ void GameObject::ActionChange(eActs act, int frame)
 	maxFrame = frame;
 	frameX = 0;
 	elapsedCount = 0;
-}
-
-void GameObject::SetKey(ePlayer player)
-{
-	switch (player)
-	{
-	case ePlayer::player1:
-		left = 'A';
-		right = 'D';
-		wP = 'R';
-		sP = 'T';
-		wK = 'F';
-		sK = 'G';
-		break;
-	case ePlayer::player2:
-		left = 'H';
-		right = 'J';
-		wP = 'I';
-		sP = 'O';
-		wK = 'K';
-		sK = 'L';
-		break;
-	}
 }
 
 void GameObject::DrowBodyPos(HDC hdc, Body body)
@@ -199,6 +179,29 @@ void GameObject::SetBodyPos(Body& body, int posX, int posY, int leftPos, int rig
 		body.hitBox.right = body.bodyPos.x + size / 2 + rightPos;
 		body.hitBox.top = body.bodyPos.y - size / 2 + topPos;
 		body.hitBox.bottom = body.bodyPos.y + size / 2 + bottomPos;
+		break;
+	}
+}
+
+void GameObject::SetKey(ePlayer player)
+{
+	switch (player)
+	{
+	case ePlayer::player1:
+		left = 'A';
+		right = 'D';
+		wP = 'R';
+		sP = 'T';
+		wK = 'F';
+		sK = 'G';
+		break;
+	case ePlayer::player2:
+		left = 'H';
+		right = 'J';
+		wP = 'I';
+		sP = 'O';
+		wK = 'K';
+		sK = 'L';
 		break;
 	}
 }

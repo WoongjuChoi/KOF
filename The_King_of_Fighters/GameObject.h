@@ -31,8 +31,10 @@ protected:
 	GameObject* target;
 
 	char left, right, wP, sP, wK, sK;
+	POINTFLOAT charPos;
 	ePlayer chosenPlayer;
 	eCharacter chosenCharacter;
+	eDir dir;
 
 	King* king;
 	Yuri* yuri;

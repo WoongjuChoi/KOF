@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BattleManager.cpp" />
+    <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Hwajai.cpp" />
@@ -149,10 +150,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Yuri.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleManager.h" />
+    <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="CommonFunction.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="GameEntity.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Yuri.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

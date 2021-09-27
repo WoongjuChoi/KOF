@@ -2,10 +2,11 @@
 #include "Singleton.h"
 #include "KeyManager.h"
 #include "SceneManager.h"
-#include "BattleManager.h"
 #include "Image.h"
 #include "Hwajai.h"
 #include "Yuri.h"
+#include "TitleScene.h"
+#include "CharacterSelect.h"
 
 //int MainGame::clickedMousePosX = 0;
 
@@ -17,12 +18,11 @@ void MainGame::Init()
 
 	//KeyManager keyMgr;
 	KeyManager::GetSingleton()->Init();
-	SceneManager::GetSingleton();
+	SceneManager::GetSingleton()->Init();	//씬 매니저 이닛 Title
 
 
 	// 타이머 셋팅
 	hTimer = (HANDLE)SetTimer(g_hWnd, 0, 10, NULL);
-	char text[128];
 
 	// 백버퍼
 	backBuffer = new Image;
@@ -30,7 +30,7 @@ void MainGame::Init()
 
 	// 배경 이미지
 	backGround = new Image;
-	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", WIN_SIZE_X, WIN_SIZE_Y)))
+	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", 1400, 933)))
 	{
 		cout << "Image/bin.bmp 파일 로드에 실패했다." << endl;
 	}
@@ -38,7 +38,9 @@ void MainGame::Init()
 	player1 = new GameObject;
 	player2 = new GameObject;
 
-	CharacterP1 = eCharacter::eYuri;
+	//CharacterP1 = eCharacter::eYuri;
+	CharacterP1 = eCharacter::eHwajai;
+	//CharacterP2 = eCharacter::eHwajai;
 	CharacterP2 = eCharacter::eYuri;
 
 	player1->SetChosenPlayer(ePlayer::player1);
@@ -51,8 +53,11 @@ void MainGame::Init()
 	player1->Init();
 	player2->Init();
 
-	BattleManager::GetSingleton()->Init();
+	titleScene = new TitleScene;
+	titleScene->Init();
 
+	chSelect = new CharacterSelect;
+	chSelect->Init();
 	// 캐릭터
 	/*player1->Init(ePlayer::player2, eCharacter::eHwajai);
 	player2->Init(ePlayer::player1, eCharacter::eYuri);*/
@@ -67,21 +72,24 @@ void MainGame::Init()
 
 void MainGame::Update()
 {
+	
+	//player1->Update();
+	//player2->Update();
 
-	player1->Update();
-	player2->Update();
-
-	/*player1->Update(eCharacter::eYuri);
-	player2->Update(eCharacter::eHwajai);*/
-	/*if (hwajai)
+	if (SceneManager::GetSingleton()->getScene() == eScene::title)
 	{
-		hwajai->Update();
+		titleScene->Update();
 	}
-	if (yuri)
+	else if (SceneManager::GetSingleton()->getScene() == eScene::cSelect)
 	{
-		yuri->Update();
-	}*/
-
+		chSelect->Update();
+	}
+	else if (SceneManager::GetSingleton()->getScene() == eScene::battle)
+	{
+		player1->Update();
+		player2->Update();
+	}
+	//chSelect->Update();
 	InvalidateRect(g_hWnd, NULL, false);
 }
 
@@ -89,26 +97,42 @@ void MainGame::Render(HDC hdc)
 {
 	HDC hBackBufferDC = backBuffer->GetMemDC();
 
-	backGround->Render(hBackBufferDC);
+	//backGround->Render(hBackBufferDC);
 
-	/*player1->Render(hBackBufferDC, eCharacter::eYuri);
-	player2->Render(hBackBufferDC, eCharacter::eHwajai);*/
 
-	wsprintf(text, "player1 HP : %d", BattleManager::GetSingleton()->Getplayer1Hp());
-	TextOut(hBackBufferDC, 200, 10, text, strlen(text));
-	wsprintf(text, "player2 HP : %d", BattleManager::GetSingleton()->Getplayer2Hp());
-	TextOut(hBackBufferDC, 200, 40, text, strlen(text));
+	//player1->Render(hBackBufferDC);
+	//player2->Render(hBackBufferDC);
 
-	player1->Render(hBackBufferDC);
-	player2->Render(hBackBufferDC);
+	if (SceneManager::GetSingleton()->getScene() == eScene::title)				//title 일 경우
+	{
+		titleScene->Render(hBackBufferDC);
+		if (SceneManager::GetSingleton()->getReadyChangeScene() == true)		//준비상태 체크
+		{
+			if (KeyManager::GetSingleton()->IsOnceKeyDown(VK_SPACE))			//space 키입력
+			{
+				SceneManager::GetSingleton()->setScene(eScene::cSelect);		//씬 변경
+				SceneManager::GetSingleton()->setReadyChangeScene(false);
+			}
+		}
+	}
+	else if (SceneManager::GetSingleton()->getScene() == eScene::cSelect)		//캐릭터 선택씬
+	{
+		chSelect->Render(hBackBufferDC);
+		if (SceneManager::GetSingleton()->getReadyChangeScene() == true)
+		{
 
-	BattleManager::GetSingleton()->Render(hBackBufferDC);
-
-	//hwajai->Render(hBackBufferDC);
-
-	//yuri->Render(hBackBufferDC);
-
+		}
+	}
+	else if (SceneManager::GetSingleton()->getScene() == eScene::battle)
+	{
+		backGround->Render(hBackBufferDC);
+		player1->Render(hBackBufferDC);
+		player2->Render(hBackBufferDC);
+	}
+	//chSelect->Render(hBackBufferDC);
 	backBuffer->Render(hdc);
+	
+	
 }
 
 void MainGame::Release()
@@ -122,7 +146,7 @@ void MainGame::Release()
 
 	SAFE_RELEASE(hwajai);
 	SAFE_RELEASE(yuri);
-
+	
 	// 타이머 객체 삭제
 	KillTimer(g_hWnd, 0);
 }
