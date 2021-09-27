@@ -43,9 +43,7 @@ void MainGame::Init()
 	//CharacterP1 = eCharacter::eHwajai;
 	//CharacterP2 = eCharacter::eHwajai;
 
-	player1->SetChosenPlayer(ePlayer::player1);
-
-	player2->SetChosenPlayer(ePlayer::player2);
+	
 
 	BattleManager::GetSingleton()->Init();
 
@@ -114,6 +112,8 @@ void MainGame::Render(HDC hdc)
 			CharacterP2 = chSelect->SelectP2Card();
 			player1->SetChosenCharacter(CharacterP1);
 			player2->SetChosenCharacter(CharacterP2);
+			player1->SetChosenPlayer(ePlayer::player1);
+			player2->SetChosenPlayer(ePlayer::player2);
 			player1->Init();
 			player2->Init();
 			SceneManager::GetSingleton()->setScene(eScene::battle);

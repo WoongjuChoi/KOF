@@ -321,18 +321,50 @@ void Image::KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, eP
 {
     if (isTransparent)
     {
-        GdiTransparentBlt(
-            hdc,
-            destX - 235,
-            destY - 313,
-            imageInfo->frameWidth, imageInfo->frameHeight,	// 전체 프레임 수 를 각각 저장해보자
+        if (player == ePlayer::player1)
+        {
+            StretchBlt(
+                reverseDc,
+                imageInfo->frameWidth * frameX,
+                imageInfo->frameHeight * frameY,
+                (imageInfo->frameWidth),
+                (imageInfo->frameHeight),
+                imageInfo->hMemDc,
+                imageInfo->frameWidth * (frameX + 1),
+                imageInfo->frameHeight * frameY,
+                -imageInfo->frameWidth,
+                imageInfo->frameHeight,
+                SRCCOPY);
 
-            imageInfo->hMemDc,
-            imageInfo->frameWidth * frameX,
-            imageInfo->frameHeight * frameY,
-            imageInfo->frameWidth, imageInfo->frameHeight,
-            transColor
-        );
+            GdiTransparentBlt(
+                hdc,
+                destX - 235,
+                destY - 313,
+                imageInfo->frameWidth, imageInfo->frameHeight,	// 전체 프레임 수 를 각각 저장해보자
+
+                reverseDc,
+                imageInfo->frameWidth * frameX,
+                imageInfo->frameHeight * frameY,
+                imageInfo->frameWidth, imageInfo->frameHeight,
+                transColor
+            );
+        }
+        else
+        {
+			GdiTransparentBlt(
+				hdc,
+				destX - 235,
+				destY - 313,
+				imageInfo->frameWidth, imageInfo->frameHeight,	// 전체 프레임 수 를 각각 저장해보자
+
+				imageInfo->hMemDc,
+				imageInfo->frameWidth * frameX,
+				imageInfo->frameHeight * frameY,
+				imageInfo->frameWidth, imageInfo->frameHeight,
+				transColor
+			);
+        }
+        
     }
 }
 
