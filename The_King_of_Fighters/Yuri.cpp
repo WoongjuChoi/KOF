@@ -135,14 +135,6 @@ void Yuri::Update()
 		{
 			ActionChange(eActs::strongFoot, 10);
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('U'))
-		{
-			ActionChange(eActs::die, 12);
-		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('I'))
-		{
-			ActionChange(eActs::victory, 8);
-		}
 		else
 		{
 			action = eActs::standing;

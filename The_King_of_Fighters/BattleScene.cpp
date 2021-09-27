@@ -16,7 +16,7 @@ void BattleScene::Init()
 	battleImage[time_infinite].Init("Image/Battle/time_infinite.bmp", 640, 480, true, RGB(255, 0, 255));
 	battleImage[stage].Init("Image/Battle/Japan_Stage.bmp", 2559, 466);
 
-	hpCalculate = 214 / 100;
+	hpCalculate = 214 / 100.0f;
 
 }
 
@@ -36,20 +36,12 @@ void BattleScene::Render(HDC hdc)
 			hpCalculate, HPdamageP1, ePlayer::player1);
 		battleImage[HP_gage_p2].HpRender(hdc, WIN_SIZE_X / 2 + 134, WIN_SIZE_Y / 10 - 12,
 			hpCalculate, HPdamageP2, ePlayer::player2);
-		/*battleImage[HP_gage_p1].BattleRender(hdc, WIN_SIZE_X / 2 - 134, WIN_SIZE_Y / 10 - 12);
-		battleImage[HP_gage_p2].BattleRender(hdc, WIN_SIZE_X / 2 + 134, WIN_SIZE_Y / 10 - 12);*/
 		battleImage[time_infinite].BattleRender(hdc, WIN_SIZE_X / 2 + 9, 186);
 		battleImage[guard_gage].BattleRender(hdc, WIN_SIZE_X / 2 - 76, WIN_SIZE_Y / 10 - 1);
 		battleImage[guard_gage].BattleRender(hdc, WIN_SIZE_X / 2 + 75, WIN_SIZE_Y / 10 - 1);
 		battleImage[hwajai].BattleRender(hdc, WIN_SIZE_X / 2 - 280, WIN_SIZE_Y / 10 - 14);
 		battleImage[yuri].BattleRender(hdc, WIN_SIZE_X / 2 + 280, WIN_SIZE_Y / 10 - 14);
 	}
-
-
-	/*battleImage[HP_gage_p1].HpRender(hdc, WIN_SIZE_X / 2 - 134, WIN_SIZE_Y / 10 - 12,
-	hpCalculate, HPdamageP1);
-	battleImage[HP_gage_p2].HpRender(hdc, WIN_SIZE_X / 2 + 134, WIN_SIZE_Y / 10 - 12,
-	hpCalculate, HPdamageP2);*/
 }
 
 void BattleScene::Release()
