@@ -175,7 +175,7 @@ void Yuri::Update()
 	else
 	{
 		elapsedCount++;
-		if (elapsedCount >= frameRate)
+		if (elapsedCount >= frameRate/2 + 1)
 		{
 			frameX++;
 			if (frameX >= maxFrame)

@@ -1,15 +1,16 @@
 #pragma once
 #include "Config.h"
-#include "GameEntity.h"
 
 // 우리가 구성할 게임 월드
 class Image;
 class Yuri;
 class Hwajai;
+class King;
 class GameObject;
 class TitleScene;
 class CharacterSelect;
-class MainGame : public GameEntity
+class BattleScene;
+class MainGame
 {
 private:
 	// 타이머
@@ -39,12 +40,12 @@ private:
 	// 캐릭터
 	Hwajai* hwajai;
 	Yuri* yuri;
-	/*GameObject* player1;
-	GameObject* player2;*/
+	King* king;
 
 	//타이틀
 	TitleScene* titleScene;
 	CharacterSelect* chSelect;
+	BattleScene* battleScene;
 
 public:
 	void Init();

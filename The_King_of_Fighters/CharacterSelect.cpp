@@ -113,7 +113,7 @@ void CharacterSelect::Update()
 
 	if (ready[p1] && ready[p2])
 	{
-		SceneManager::GetSingleton()->setScene(eScene::battle);
+		SceneManager::GetSingleton()->setReadyChangeScene(true);
 	}
 
 }
@@ -131,7 +131,7 @@ void CharacterSelect::Render(HDC hdc)
 	}
 	else
 	{
-		SceneManager::GetSingleton()->setReadyChangeScene(true);
+		
 		CSScene[selectCard].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
 		CSScene[cursor1].Render(hdc, CS[select[p1]].x, CS[select[p1]].y, frameX, 0, ePlayer::player2);
 		CSScene[cursor2].Render(hdc, CS[select[p2]].x, CS[select[p2]].y, frameX, 0, ePlayer::player2);

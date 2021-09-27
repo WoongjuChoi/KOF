@@ -140,8 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BattleManager.cpp" />
+    <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
-    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Hwajai.cpp" />
     <ClCompile Include="Image.cpp" />
@@ -155,10 +155,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleManager.h" />
+    <ClInclude Include="BattleScene.h" />
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="CommonFunction.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Hwajai.h" />
     <ClInclude Include="Image.h" />

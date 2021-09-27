@@ -2,8 +2,8 @@
 
 void BattleManager::Init()
 {
-    player1.HP = 10;
-    player2.HP = 10;
+    player1.HP = 100;
+    player2.HP = 100;
 
     player1.isLose = false;
     player1.isWin = false;

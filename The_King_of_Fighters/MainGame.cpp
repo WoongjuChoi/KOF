@@ -2,11 +2,13 @@
 #include "Singleton.h"
 #include "KeyManager.h"
 #include "SceneManager.h"
+#include "BattleManager.h"
 #include "Image.h"
 #include "Hwajai.h"
 #include "Yuri.h"
 #include "TitleScene.h"
 #include "CharacterSelect.h"
+#include "BattleScene.h"
 
 //int MainGame::clickedMousePosX = 0;
 
@@ -30,7 +32,7 @@ void MainGame::Init()
 
 	// 배경 이미지
 	backGround = new Image;
-	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", 1400, 933)))
+	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", WIN_SIZE_X, WIN_SIZE_Y)))
 	{
 		cout << "Image/bin.bmp 파일 로드에 실패했다." << endl;
 	}
@@ -38,8 +40,8 @@ void MainGame::Init()
 	player1 = new GameObject;
 	player2 = new GameObject;
 
-	//CharacterP1 = eCharacter::eYuri;
-	CharacterP1 = eCharacter::eHwajai;
+	CharacterP1 = eCharacter::eYuri;
+	//CharacterP1 = eCharacter::eHwajai;
 	//CharacterP2 = eCharacter::eHwajai;
 	CharacterP2 = eCharacter::eYuri;
 
@@ -53,21 +55,16 @@ void MainGame::Init()
 	player1->Init();
 	player2->Init();
 
+	BattleManager::GetSingleton()->Init();
+
 	titleScene = new TitleScene;
 	titleScene->Init();
 
 	chSelect = new CharacterSelect;
 	chSelect->Init();
-	// 캐릭터
-	/*player1->Init(ePlayer::player2, eCharacter::eHwajai);
-	player2->Init(ePlayer::player1, eCharacter::eYuri);*/
 
-	/*yuri = new Yuri;
-	yuri->Init(ePlayer::player1);
-
-	hwajai = new Hwajai;
-	hwajai->Init(ePlayer::player2);*/
-
+	battleScene = new BattleScene;
+	battleScene->Init();
 }
 
 void MainGame::Update()
@@ -88,6 +85,7 @@ void MainGame::Update()
 	{
 		player1->Update();
 		player2->Update();
+		battleScene->Update();
 	}
 	//chSelect->Update();
 	InvalidateRect(g_hWnd, NULL, false);
@@ -120,19 +118,21 @@ void MainGame::Render(HDC hdc)
 		chSelect->Render(hBackBufferDC);
 		if (SceneManager::GetSingleton()->getReadyChangeScene() == true)
 		{
-
+			SceneManager::GetSingleton()->setScene(eScene::battle);
 		}
 	}
 	else if (SceneManager::GetSingleton()->getScene() == eScene::battle)
 	{
 		backGround->Render(hBackBufferDC);
+		battleScene->Render(hBackBufferDC);
 		player1->Render(hBackBufferDC);
 		player2->Render(hBackBufferDC);
 	}
+
+	BattleManager::GetSingleton()->Render(hBackBufferDC);
+
 	//chSelect->Render(hBackBufferDC);
 	backBuffer->Render(hdc);
-	
-	
 }
 
 void MainGame::Release()

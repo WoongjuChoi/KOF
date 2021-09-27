@@ -1,5 +1,4 @@
 #pragma once
-#include "GameEntity.h"
 #include "Config.h"
 #include <windef.h>
 
@@ -12,7 +11,7 @@ struct Body
 class Yuri;
 class King;
 class Hwajai;
-class GameObject : public GameEntity
+class GameObject
 {
 protected:
 	POINTFLOAT pos;

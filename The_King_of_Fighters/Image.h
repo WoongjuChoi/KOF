@@ -83,6 +83,8 @@ public:
     void Render(HDC hdc, int destX, int destY, int frameX, int frameY, bool scene);
 
     void KingRender(HDC hdc, int destX, int destY, int frameX, int frameY, ePlayer player);
+    void HpRender(HDC hdc, int destX, int destY, float hpCalculate, int damage);
+    void BattleRender(HDC hdc, int destX, int destY);
 
     HDC GetMemDC() { if (imageInfo) return imageInfo->hMemDc; return NULL; }
 };
