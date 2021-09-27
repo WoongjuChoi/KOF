@@ -343,8 +343,8 @@ void Image::HpRender(HDC hdc, int destX, int destY, float hpCalculate, int damag
     {
         GdiTransparentBlt(
             hdc,
-            destX + hpCalculate * damage,
-            destY,
+            destX - imageInfo->width / 2 + hpCalculate * damage,
+            destY - imageInfo->height / 2,
             imageInfo->width - hpCalculate * damage,
             imageInfo->height,
 
