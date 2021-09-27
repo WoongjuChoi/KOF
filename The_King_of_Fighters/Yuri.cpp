@@ -77,7 +77,6 @@ void Yuri::Update()
 			}
 			elapsedCount = 0;
 		}
-
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
 			if (action != eActs::moveForward)
@@ -136,10 +135,6 @@ void Yuri::Update()
 		{
 			ActionChange(eActs::strongFoot, 10);
 		}
-		else if (KeyManager::GetSingleton()->IsOnceKeyDown('Y'))
-		{
-			ActionChange(eActs::hit, 3);
-		}
 		else if (KeyManager::GetSingleton()->IsOnceKeyDown('U'))
 		{
 			ActionChange(eActs::die, 12);
@@ -153,6 +148,29 @@ void Yuri::Update()
 			action = eActs::standing;
 		}
 
+		switch (player)
+		{
+		case player1:
+			if (BattleManager::GetSingleton()->Getplayer1Lose())
+			{
+				ActionChange(eActs::die, 12);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer1Win())
+			{
+				ActionChange(eActs::victory, 8);
+			}
+			break;
+		case player2:
+			if (BattleManager::GetSingleton()->Getplayer2Lose())
+			{
+				ActionChange(eActs::die, 12);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer2Win())
+			{
+				ActionChange(eActs::victory, 8);
+			}
+			break;
+		}
 	}
 	else
 	{
@@ -162,10 +180,17 @@ void Yuri::Update()
 			frameX++;
 			if (frameX >= maxFrame)
 			{
-				action = eActs::standing;
-				delay = false;
-				BattleManager::GetSingleton()->SetIsHit(false);
-				frameX = 0;
+				if (action == eActs::die || action == eActs::victory)
+				{
+					frameX = maxFrame;
+				}
+				else
+				{
+					action = eActs::standing;
+					delay = false;
+					BattleManager::GetSingleton()->SetIsHit(false);
+					frameX = 0;
+				}
 			}
 			elapsedCount = 0;
 		}

@@ -30,7 +30,7 @@ void MainGame::Init()
 
 	// 배경 이미지
 	backGround = new Image;
-	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", 1400, 933)))
+	if (!SUCCEEDED(backGround->Init("Image/Stage.bmp", WIN_SIZE_X, WIN_SIZE_Y)))
 	{
 		cout << "Image/bin.bmp 파일 로드에 실패했다." << endl;
 	}
@@ -38,7 +38,7 @@ void MainGame::Init()
 	player1 = new GameObject;
 	player2 = new GameObject;
 
-	CharacterP1 = eCharacter::eHwajai;
+	CharacterP1 = eCharacter::eYuri;
 	CharacterP2 = eCharacter::eYuri;
 
 	player1->SetChosenPlayer(ePlayer::player1);

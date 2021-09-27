@@ -2,8 +2,13 @@
 
 void BattleManager::Init()
 {
-    player1.HP = 100;
-    player2.HP = 100;
+    player1.HP = 10;
+    player2.HP = 10;
+
+    player1.isLose = false;
+    player1.isWin = false;
+    player2.isLose = false;
+    player2.isWin = false;
 
     isHit = false;
 
@@ -68,6 +73,13 @@ bool BattleManager::Hit()
         {
             isHit = true;
             player2.HP -= damage;
+
+            if (player2.HP <= 0)
+            {
+                player2.isLose = true;
+                player1.isWin = true;
+            }
+
             return true;
         }
     }
@@ -78,6 +90,13 @@ bool BattleManager::Hit()
         {
             isHit = true;
             player1.HP -= damage;
+
+            if (player1.HP <= 0)
+            {
+                player1.isLose = true;
+                player2.isWin = true;
+            }
+
             return true;
         }
     }

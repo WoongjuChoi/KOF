@@ -6,6 +6,8 @@ struct Player
 {
     int HP;
     RECT hitBox[5]; // 0 : 플레이어 1 : 약손 2 : 강손 3 : 약발 4 : 강발
+    bool isLose;
+    bool isWin;
 };
 
 class BattleManager : public Singleton<BattleManager>
@@ -28,5 +30,9 @@ public:
     inline void SetDamage(int damage) { this->damage = damage; }
     inline int Getplayer1Hp() { return player1.HP; }
     inline int Getplayer2Hp() { return player2.HP; }
+    inline bool Getplayer1Win() { return player1.isWin; }
+    inline bool Getplayer2Win() { return player2.isWin; }
+    inline bool Getplayer1Lose() { return player1.isLose; }
+    inline bool Getplayer2Lose() { return player2.isLose; }
 };
 

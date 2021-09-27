@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
-Debug|Win32|C:\Users\dndwn\Desktop\KOF\KOF\KOF\The_King_of_Fighters\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.18362.0:
+Debug|Win32|C:\Users\dndwn\OneDrive\바탕 화면\KOF_Resource\KOF\The_King_of_Fighters\|
