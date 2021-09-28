@@ -14,11 +14,24 @@ void CharacterSelect::Init()
 	CSScene[cursor2].Init("Image/CharacterSelect/cursor_2P.bmp", 2250, 115, 30, 1, true, RGB(0, 0, 0));
 	CSScene[readyP1].Init("Image/CharacterSelect/readyp1.bmp", 640, 480, 1, 1, true, RGB(255, 0, 255));
 	CSScene[readyP2].Init("Image/CharacterSelect/readyp2.bmp", 640, 480, 1, 1, true, RGB(255, 0, 255));
+	CSScene[chCard].Init("Image/CharacterSelect/character_card.bmp", 640, 480, 1, 1, true, RGB(255, 0, 255));
+	CSScene[chCircle].Init("Image/CharacterSelect/character_circle_light.bmp", 18500, 480, 25, 1, true, RGB(0, 0, 0));
+
+
+	CSScene[chHwajai].Init("Image/hwajai/standing.bmp", (880*9), 480, 9, 1, true, RGB(255, 0, 255));
+	CSScene[chKing].Init("Image/King/King_Standing.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	CSScene[chYuri].Init("Image/Yuri/Standing.bmp", (740 * 9), 770, 9, 1, true, RGB(255, 0, 255));
+
+
+	CSScene[hwajaiSelect].Init("Image/hwajai/hwajai_select.bmp", 296, 676, 1, 1, true, RGB(255, 0, 255));
+	CSScene[kingSelect].Init("Image/King/King_select.bmp", 361, 712, 1, 1, true, RGB(255, 0, 255));
+	CSScene[yuriSelect].Init("Image/Yuri/Yuri_select.bmp", 377, 653, 1, 1, true, RGB(255, 0, 255));
 
 	SceneManager::GetSingleton()->Init();
-	frameX = frameY = 0;
-	elapsedCount = 0;
+	chFrameX = frameX = frameY = 0;
+	chElapsedCount = elapsedCount = 0;
 	maxFrame = 35;
+	chMaxFrame = 9;
 	frameRate = 2;
 	sceneChange = true;
 
@@ -48,6 +61,17 @@ void CharacterSelect::Update()
 			frameX = 0;
 		}
 		elapsedCount = 0;
+	}
+
+	chElapsedCount++;
+	if (chElapsedCount > frameRate)
+	{
+		chFrameX++;
+		if (chFrameX >= chMaxFrame)
+		{
+			chFrameX = 0;
+		}
+		chElapsedCount = 0;
 	}
 
 	if (ready[p1] == false)
@@ -133,6 +157,39 @@ void CharacterSelect::Render(HDC hdc)
 	{
 		
 		CSScene[selectCard].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
+		CSScene[chCircle].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, chFrameX, 0, ePlayer::player2);
+
+		if (select[p1] == 0)
+		{
+			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 70, chFrameX, 0, ePlayer::player1);
+		}
+		else if (select[p1] == 1)
+		{
+			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player1);
+		}
+		else if (select[p1] == 2)
+		{
+			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 160, chMaxFrame, 0, ePlayer::player1);
+		}
+
+		if (select[p2] == 0)
+		{
+			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+		}
+		else if (select[p2] == 1)
+		{
+			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+		}
+		else if (select[p2] == 2)
+		{
+			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+		}
+
+
+		CSScene[chCard].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
 		CSScene[cursor1].Render(hdc, CS[select[p1]].x, CS[select[p1]].y, frameX, 0, ePlayer::player2);
 		CSScene[cursor2].Render(hdc, CS[select[p2]].x, CS[select[p2]].y, frameX, 0, ePlayer::player2);
 
@@ -140,6 +197,19 @@ void CharacterSelect::Render(HDC hdc)
 	CSScene[screenBorder].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
 	CSScene[midBorder].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
 	CSScene[memBorder].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
+
+	//if (select[p1] == 0)
+	//{
+	//	CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+	//}
+	//else if (select[p1] == 1)
+	//{
+	//	CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+	//}
+	//else if (select[p1] == 2)
+	//{
+	//	CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
+	//}
 
 
 	if (ready[p1])
