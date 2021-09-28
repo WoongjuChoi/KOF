@@ -12,6 +12,7 @@ void BattleScene::Init(eCharacter CharacterP1, eCharacter CharacterP2)
 	battleImage[guard_gage].Init("Image/Battle/guard_gage.bmp", 97, 4, true, RGB(0, 0, 0));
 	battleImage[time_infinite].Init("Image/Battle/time_infinite.bmp", 640, 480, true, RGB(255, 0, 255));
 	battleImage[stage].Init("Image/Battle/Japan_Stage.bmp", 2559, 466);
+	battleImage[KO].Init("Image/Battle/KO_1.bmp", 9600, 480, 15, 1, true, RGB(255, 0, 255));
 
 	switch (CharacterP1)
 	{
@@ -41,12 +42,32 @@ void BattleScene::Init(eCharacter CharacterP1, eCharacter CharacterP2)
 
 	hpCalculate = 214 / 100.0f;
 
+	frameX = 0;
+	frameY = 0;
+	elapsedCount = 0;
+	maxFrame = 14;
+	frameRate = 4;
+	sceneChange = true;
 }
 
 void BattleScene::Update()
 {
 	HPdamageP1 = 100 - BattleManager::GetSingleton()->Getplayer1Hp();
 	HPdamageP2 = 100 - BattleManager::GetSingleton()->Getplayer2Hp();
+
+	if (BattleManager::GetSingleton()->Getplayer1Win() || BattleManager::GetSingleton()->Getplayer2Win())
+	{
+		elapsedCount++;
+		if (elapsedCount > frameRate)
+		{
+			frameX++;
+			if (frameX >= maxFrame)
+			{
+				frameX = maxFrame;
+			}
+			elapsedCount = 0;
+		}
+	}
 }
 
 void BattleScene::Render(HDC hdc)
@@ -64,6 +85,12 @@ void BattleScene::Render(HDC hdc)
 		battleImage[guard_gage].BattleRender(hdc, WIN_SIZE_X / 2 + 75, WIN_SIZE_Y / 10 - 1);
 		battleImage[P1Character].BattleRender(hdc, WIN_SIZE_X / 2 - 280, WIN_SIZE_Y / 10 - 14);
 		battleImage[P2Character].BattleRender(hdc, WIN_SIZE_X / 2 + 280, WIN_SIZE_Y / 10 - 14);
+
+		if (BattleManager::GetSingleton()->Getplayer1Win() || BattleManager::GetSingleton()->Getplayer2Win())
+		{
+			battleImage[KO].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, ePlayer::player2);
+
+		}
 	}
 }
 
