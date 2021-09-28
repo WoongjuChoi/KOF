@@ -33,6 +33,7 @@ void CharacterSelect::Init()
 	maxFrame = 35;
 	chMaxFrame = 9;
 	frameRate = 2;
+	chFrameRate = 5;
 	sceneChange = true;
 
 	ready[p1] = false;
@@ -64,7 +65,7 @@ void CharacterSelect::Update()
 	}
 
 	chElapsedCount++;
-	if (chElapsedCount > frameRate)
+	if (chElapsedCount > chFrameRate)
 	{
 		chFrameX++;
 		if (chFrameX >= chMaxFrame)
@@ -157,35 +158,44 @@ void CharacterSelect::Render(HDC hdc)
 	{
 		
 		CSScene[selectCard].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 0, 0, 1);
-		CSScene[chCircle].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, chFrameX, 0, ePlayer::player2);
+		CSScene[chCircle].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, 0, ePlayer::player2);
 
 		if (select[p1] == 0)
 		{
+			chMaxFrame = 9;
 			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
 			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 70, chFrameX, 0, ePlayer::player1);
 		}
 		else if (select[p1] == 1)
 		{
+			chMaxFrame = 10;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
 			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player1);
 		}
 		else if (select[p1] == 2)
 		{
+			chMaxFrame = 9;
 			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
-			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 160, chMaxFrame, 0, ePlayer::player1);
+			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 160, chFrameX, 0, ePlayer::player1);
 		}
 
 		if (select[p2] == 0)
 		{
+			chMaxFrame = 9;
 			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 70, chFrameX, 0, ePlayer::player2);
 		}
 		else if (select[p2] == 1)
 		{
+			chMaxFrame = 10;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player2);
 		}
 		else if (select[p2] == 2)
 		{
+			chMaxFrame = 9;
 			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
+			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 160, chFrameX, 0, ePlayer::player2);
 		}
 
 

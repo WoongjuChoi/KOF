@@ -1,4 +1,3 @@
-#include "GameObject.h"
 #include "SceneManager.h"
 #pragma once
 class Image;
