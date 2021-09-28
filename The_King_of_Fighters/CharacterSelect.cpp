@@ -18,7 +18,7 @@ void CharacterSelect::Init()
 	CSScene[chCircle].Init("Image/CharacterSelect/character_circle_light.bmp", 18500, 480, 25, 1, true, RGB(0, 0, 0));
 
 
-	CSScene[chHwajai].Init("Image/hwajai/standing.bmp", (880*9), 480, 9, 1, true, RGB(255, 0, 255));
+	CSScene[chHwajai].Init("Image/hwajai/standing.bmp", (880*9)+153, 480+153, 9, 1, true, RGB(255, 0, 255));
 	CSScene[chKing].Init("Image/King/King_Standing.bmp", 3720, 576, 8, 1, true, RGB(255, 0, 255));
 	CSScene[chYuri].Init("Image/Yuri/Standing.bmp", (740 * 9), 770, 9, 1, true, RGB(255, 0, 255));
 
@@ -28,12 +28,12 @@ void CharacterSelect::Init()
 	CSScene[yuriSelect].Init("Image/Yuri/Yuri_select.bmp", 377, 653, 1, 1, true, RGB(255, 0, 255));
 
 	SceneManager::GetSingleton()->Init();
-	chFrameX = frameX = frameY = 0;
-	chElapsedCount = elapsedCount = 0;
+	p1ChFrameX = p2ChFrameX = frameX = frameY = 0;
+	p1ChElapsedCount = p2ChElapsedCount = elapsedCount = 0;
 	maxFrame = 35;
-	chMaxFrame = 9;
+	p1ChMaxFrame = p2ChMaxFrame = 9;
 	frameRate = 2;
-	chFrameRate = 5;
+	p1ChFrameRate  = p2ChFrameRate = 5;
 	sceneChange = true;
 
 	ready[p1] = false;
@@ -64,15 +64,26 @@ void CharacterSelect::Update()
 		elapsedCount = 0;
 	}
 
-	chElapsedCount++;
-	if (chElapsedCount > chFrameRate)
+	p1ChElapsedCount++;
+	if (p1ChElapsedCount > p1ChFrameRate)
 	{
-		chFrameX++;
-		if (chFrameX >= chMaxFrame)
+		p1ChFrameX++;
+		if (p1ChFrameX >= p1ChMaxFrame)
 		{
-			chFrameX = 0;
+			p1ChFrameX = 0;
 		}
-		chElapsedCount = 0;
+		p1ChElapsedCount = 0;
+	}
+
+	p2ChElapsedCount++;
+	if (p2ChElapsedCount > p2ChFrameRate)
+	{
+		p2ChFrameX++;
+		if (p2ChFrameX >= p2ChMaxFrame)
+		{
+			p2ChFrameX = 0;
+		}
+		p2ChElapsedCount = 0;
 	}
 
 	if (ready[p1] == false)
@@ -162,40 +173,40 @@ void CharacterSelect::Render(HDC hdc)
 
 		if (select[p1] == 0)
 		{
-			chMaxFrame = 9;
+			p1ChMaxFrame = 9;
 			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
-			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 70, chFrameX, 0, ePlayer::player1);
+			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 75, p1ChFrameX, 0, ePlayer::player1);
 		}
 		else if (select[p1] == 1)
 		{
-			chMaxFrame = 8;
+			p1ChMaxFrame = 8;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
-			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player1);
+			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 40, p1ChFrameX, 0, ePlayer::player1);
 		}
 		else if (select[p1] == 2)
 		{
-			chMaxFrame = 9;
+			p1ChMaxFrame = 9;
 			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
-			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 160, chFrameX, 0, ePlayer::player1);
+			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 160, p1ChFrameX, 0, ePlayer::player1);
 		}
 
 		if (select[p2] == 0)
 		{
-			chMaxFrame = 9;
+			p2ChMaxFrame = 9;
 			CSScene[hwajaiSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
-			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 70, chFrameX, 0, ePlayer::player2);
+			CSScene[chHwajai].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 75, p2ChFrameX, 0, ePlayer::player2);
 		}
 		else if (select[p2] == 1)
 		{
-			chMaxFrame = 8;
+			p2ChMaxFrame = 8;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
-			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player2);
+			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 40, p2ChFrameX, 0, ePlayer::player2);
 		}
 		else if (select[p2] == 2)
 		{
-			chMaxFrame = 9;
+			p2ChMaxFrame = 9;
 			CSScene[yuriSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
-			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 160, chFrameX, 0, ePlayer::player2);
+			CSScene[chYuri].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 160, p2ChFrameX, 0, ePlayer::player2);
 		}
 
 
