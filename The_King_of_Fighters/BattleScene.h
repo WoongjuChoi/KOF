@@ -4,12 +4,12 @@
 
 
 class Image;
-class BattleScene : public SceneManager
+class BattleScene
 {
 private:
 	enum eBattle {
 		P1Character, P2Character, HP_bar, HP_gage_p1, HP_gage_p2,
-		guard_gage, time_infinite, stage, KO, eBattleEnd
+		guard_gage, time_infinite, stage, KO, round1, ready, ready_bar, GO, eBattleEnd
 	};
 
 	Image* battleImage = nullptr;
@@ -22,7 +22,10 @@ private:
 	int elapsedCount;
 	int maxFrame;
 	int frameRate;
+	int delay, delayCount;
 	bool sceneChange;
+	bool reset;
+	eBattle nowImage;
 
 public:
 	void Init(eCharacter CharacterP1, eCharacter CharacterP2);

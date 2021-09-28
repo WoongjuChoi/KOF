@@ -14,6 +14,11 @@ void BattleScene::Init(eCharacter CharacterP1, eCharacter CharacterP2)
 	battleImage[stage].Init("Image/Battle/Japan_Stage.bmp", 2559, 466);
 	battleImage[KO].Init("Image/Battle/KO_1.bmp", 9600, 480, 15, 1, true, RGB(255, 0, 255));
 
+	battleImage[round1].Init("Image/Battle/BattleIntro/round1.bmp", 4480, 480, 7, 1, true, RGB(255, 0, 255));
+	battleImage[ready].Init("Image/Battle/BattleIntro/ready.bmp", 6400, 480, 10, 1, true, RGB(255, 0, 255));
+	battleImage[ready_bar].Init("Image/Battle/BattleIntro/ready_inside.bmp", 5760, 480, 9, 1, true, RGB(255, 0, 255));
+	battleImage[GO].Init("Image/Battle/BattleIntro/GO.bmp", 9600, 480, 15, 1, true, RGB(0, 0, 0));
+
 	switch (CharacterP1)
 	{
 	case eCharacter::eHwajai:
@@ -46,14 +51,32 @@ void BattleScene::Init(eCharacter CharacterP1, eCharacter CharacterP2)
 	frameY = 0;
 	elapsedCount = 0;
 	maxFrame = 14;
-	frameRate = 4;
-	sceneChange = true;
+	frameRate = 1;
+	sceneChange = false;
+	reset = false;
+	nowImage = eBattle::round1;
 }
 
 void BattleScene::Update()
 {
 	HPdamageP1 = 100 - BattleManager::GetSingleton()->Getplayer1Hp();
 	HPdamageP2 = 100 - BattleManager::GetSingleton()->Getplayer2Hp();
+
+	if (nowImage == eBattle::round1 || nowImage == eBattle::ready_bar || nowImage == eBattle::ready || nowImage == eBattle::GO)
+	{
+		elapsedCount++;
+		if (elapsedCount > frameRate)
+		{
+			frameX++;
+			//if (frameX >= maxFrame)
+			//{
+			//	frameX =0;
+
+
+			//}
+			elapsedCount = 0;
+		}
+	}
 
 	if (BattleManager::GetSingleton()->Getplayer1Win() || BattleManager::GetSingleton()->Getplayer2Win())
 	{
@@ -64,7 +87,8 @@ void BattleScene::Update()
 			if (frameX >= maxFrame)
 			{
 				frameX = maxFrame;
-				SceneManager::GetSingleton()->setReadyChangeScene(true);
+
+
 			}
 			elapsedCount = 0;
 		}
@@ -73,7 +97,7 @@ void BattleScene::Update()
 
 void BattleScene::Render(HDC hdc)
 {
-	if (battleImage)
+	if (sceneChange)
 	{
 		/*battleImage[stage].BattleRender(hdc, 0, 0);*/
 		battleImage[HP_bar].BattleRender(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 10);
@@ -90,6 +114,104 @@ void BattleScene::Render(HDC hdc)
 		if (BattleManager::GetSingleton()->Getplayer1Win() || BattleManager::GetSingleton()->Getplayer2Win())
 		{
 			battleImage[KO].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, ePlayer::player2);
+		}
+	}
+	else
+	{
+		if (nowImage == eBattle::round1)
+		{
+			if (reset == false)
+			{
+				delay = 0;
+				delayCount = 30;
+				maxFrame = 7;
+				reset = true;
+			}
+			battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, 1);
+			if (frameX >= maxFrame)
+			{
+				delay++;
+				battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 6, frameY, 1);
+				if (delay >= delayCount)
+				{
+					elapsedCount = frameRate;
+					reset = false;
+					nowImage = eBattle::ready_bar;
+				}
+			}
+		}
+		else if (nowImage == eBattle::ready_bar)
+		{
+			if (reset == false)
+			{
+				delay = 0;
+				delayCount = 50;
+				frameX = 0;
+				maxFrame = 9;
+				reset = true;
+			}
+			battleImage[ready_bar].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, 1);
+			battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 6, frameY, 1);
+
+			if (frameX >= maxFrame)
+			{
+				delay++;
+				battleImage[ready_bar].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 8, frameY, 1);
+				battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 6, frameY, 1);
+				if (delay >= delayCount)
+				{
+					elapsedCount = frameRate;
+					reset = false;
+					nowImage = eBattle::ready;
+				}
+			}
+		}
+		else if (nowImage == eBattle::ready)
+		{
+			if (reset == false)
+			{
+				delay = 0;
+				delayCount = 70;
+				frameX = 0;
+				maxFrame = 9;
+				reset = true;
+			}
+			battleImage[ready].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, 1);
+			battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 6, frameY, 1);
+			if (frameX >= maxFrame)
+			{
+				delay++;
+				battleImage[ready].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 9, frameY, 1);
+				battleImage[round1].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 6, frameY, 1);
+				if (delay >= delayCount)
+				{
+					elapsedCount = frameRate;
+					reset = false;
+					nowImage = eBattle::GO;
+				}
+			}
+		}
+		else if (nowImage == eBattle::GO)
+		{
+			if (reset == false)
+			{
+				delay = 0;
+				delayCount = 30;
+				frameX = 0;
+				maxFrame = 15;
+				reset = true;
+			}
+			battleImage[GO].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, frameX, frameY, 1);
+			if (frameX >= maxFrame)
+			{
+				delay++;
+				battleImage[GO].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 14, frameY, 1);
+				if (delay >= delayCount)
+				{
+					reset = false;
+					sceneChange = true;
+				}
+			}
 
 		}
 	}
