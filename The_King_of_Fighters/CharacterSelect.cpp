@@ -19,7 +19,7 @@ void CharacterSelect::Init()
 
 
 	CSScene[chHwajai].Init("Image/hwajai/standing.bmp", (880*9), 480, 9, 1, true, RGB(255, 0, 255));
-	CSScene[chKing].Init("Image/King/King_Standing.bmp", 4650, 576, 10, 1, true, RGB(255, 0, 255));
+	CSScene[chKing].Init("Image/King/King_Standing.bmp", 3720, 576, 8, 1, true, RGB(255, 0, 255));
 	CSScene[chYuri].Init("Image/Yuri/Standing.bmp", (740 * 9), 770, 9, 1, true, RGB(255, 0, 255));
 
 
@@ -168,7 +168,7 @@ void CharacterSelect::Render(HDC hdc)
 		}
 		else if (select[p1] == 1)
 		{
-			chMaxFrame = 10;
+			chMaxFrame = 8;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 - 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player2);
 			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 - 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player1);
 		}
@@ -187,7 +187,7 @@ void CharacterSelect::Render(HDC hdc)
 		}
 		else if (select[p2] == 1)
 		{
-			chMaxFrame = 10;
+			chMaxFrame = 8;
 			CSScene[kingSelect].Render(hdc, WIN_SIZE_X / 2 + 450, WIN_SIZE_Y / 2, 0, 0, ePlayer::player1);
 			CSScene[chKing].Render(hdc, WIN_SIZE_X / 2 + 120, WIN_SIZE_Y / 2 - 40, chFrameX, 0, ePlayer::player2);
 		}
