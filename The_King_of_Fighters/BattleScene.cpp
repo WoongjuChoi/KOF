@@ -2,19 +2,42 @@
 #include "Image.h"
 #include "BattleManager.h"
 
-void BattleScene::Init()
+void BattleScene::Init(eCharacter CharacterP1, eCharacter CharacterP2)
 {
 
 	battleImage = new Image[eBattle::eBattleEnd];
-	battleImage[hwajai].Init("Image/Battle/hwajai.bmp", 85, 82, true, RGB(255, 0, 255));
-	battleImage[king].Init("Image/Battle/king.bmp", 85, 82, true, RGB(255, 0, 255));
-	battleImage[yuri].Init("Image/Battle/yuri_reverse.bmp", 85, 82, true, RGB(255, 0, 255));
 	battleImage[HP_bar].Init("Image/Battle/HP_bar.bmp", /*1300, 150*/676, 79, true, RGB(255, 0, 255));
 	battleImage[HP_gage_p1].Init("Image/Battle/HP_gage.bmp", 214, 9, true, RGB(255, 0, 255));
 	battleImage[HP_gage_p2].Init("Image/Battle/HP_gage_2.bmp", 214, 9, true, RGB(255, 0, 255));
 	battleImage[guard_gage].Init("Image/Battle/guard_gage.bmp", 97, 4, true, RGB(0, 0, 0));
 	battleImage[time_infinite].Init("Image/Battle/time_infinite.bmp", 640, 480, true, RGB(255, 0, 255));
 	battleImage[stage].Init("Image/Battle/Japan_Stage.bmp", 2559, 466);
+
+	switch (CharacterP1)
+	{
+	case eCharacter::eHwajai:
+		battleImage[P1Character].Init("Image/Battle/hwajai.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	case eCharacter::eKing:
+		battleImage[P1Character].Init("Image/Battle/king.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	case eCharacter::eYuri:
+		battleImage[P1Character].Init("Image/Battle/yuri.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	}
+
+	switch (CharacterP2)
+	{
+	case eCharacter::eHwajai:
+		battleImage[P2Character].Init("Image/Battle/hwajai_reverse.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	case eCharacter::eKing:
+		battleImage[P2Character].Init("Image/Battle/king_reverse.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	case eCharacter::eYuri:
+		battleImage[P2Character].Init("Image/Battle/yuri_reverse.bmp", 85, 82, true, RGB(255, 0, 255));
+		break;
+	}
 
 	hpCalculate = 214 / 100.0f;
 
@@ -39,8 +62,8 @@ void BattleScene::Render(HDC hdc)
 		battleImage[time_infinite].BattleRender(hdc, WIN_SIZE_X / 2 + 9, 186);
 		battleImage[guard_gage].BattleRender(hdc, WIN_SIZE_X / 2 - 76, WIN_SIZE_Y / 10 - 1);
 		battleImage[guard_gage].BattleRender(hdc, WIN_SIZE_X / 2 + 75, WIN_SIZE_Y / 10 - 1);
-		battleImage[hwajai].BattleRender(hdc, WIN_SIZE_X / 2 - 280, WIN_SIZE_Y / 10 - 14);
-		battleImage[yuri].BattleRender(hdc, WIN_SIZE_X / 2 + 280, WIN_SIZE_Y / 10 - 14);
+		battleImage[P1Character].BattleRender(hdc, WIN_SIZE_X / 2 - 280, WIN_SIZE_Y / 10 - 14);
+		battleImage[P2Character].BattleRender(hdc, WIN_SIZE_X / 2 + 280, WIN_SIZE_Y / 10 - 14);
 	}
 }
 

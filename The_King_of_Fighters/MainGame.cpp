@@ -52,9 +52,6 @@ void MainGame::Init()
 
 	chSelect = new CharacterSelect;
 	chSelect->Init();
-
-	battleScene = new BattleScene;
-	battleScene->Init();
 }
 
 void MainGame::Update()
@@ -116,6 +113,8 @@ void MainGame::Render(HDC hdc)
 			player2->SetChosenPlayer(ePlayer::player2);
 			player1->Init();
 			player2->Init();
+			battleScene = new BattleScene;
+			battleScene->Init(CharacterP1, CharacterP2);
 			SceneManager::GetSingleton()->setScene(eScene::battle);
 		}
 	}

@@ -8,7 +8,7 @@ class BattleScene
 {
 private:
 	enum eBattle {
-		hwajai, king, yuri, HP_bar, HP_gage_p1, HP_gage_p2,
+		P1Character, P2Character, HP_bar, HP_gage_p1, HP_gage_p2,
 		guard_gage, time_infinite, stage, eBattleEnd
 	};
 
@@ -19,7 +19,7 @@ private:
 	int HPdamageP2;
 
 public:
-	void Init();
+	void Init(eCharacter CharacterP1, eCharacter CharacterP2);
 	void Update();
 	void Render(HDC hdc);
 	void Release();
