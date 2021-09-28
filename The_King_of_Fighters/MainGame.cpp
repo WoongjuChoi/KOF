@@ -121,6 +121,7 @@ void MainGame::Render(HDC hdc)
 			battleScene = new BattleScene;
 			battleScene->Init(CharacterP1, CharacterP2);
 			SceneManager::GetSingleton()->setScene(eScene::battle);
+			SceneManager::GetSingleton()->setReadyChangeScene(false);
 		}
 	}
 	else if (SceneManager::GetSingleton()->getScene() == eScene::battle)

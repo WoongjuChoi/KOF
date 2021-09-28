@@ -151,6 +151,7 @@
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Winner.cpp" />
     <ClCompile Include="Yuri.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="Winner.h" />
     <ClInclude Include="Yuri.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
