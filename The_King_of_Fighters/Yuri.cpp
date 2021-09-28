@@ -58,6 +58,17 @@ void Yuri::Update()
 	BattleManager::GetSingleton()->SetHitBoxPos(0, size/2, size/2 + 10, size/2, size + 40, player, pos);
 	BattleManager::GetSingleton()->SetHitBoxPos(1, 0, 0, 0, 0, player, pos);
 
+	if (BattleManager::GetSingleton()->CharCollision())
+	{		
+		moveSpeed = 0.0f;
+	}
+	else moveSpeed = 10.0f;
+
+	if (action == eActs::moveBackward) moveSpeed = 10.0f;
+
+	BattleManager::GetSingleton()->MapCollision(pos, size, moveSpeed, action);
+
+
 	if (BattleManager::GetSingleton()->Hit())
 	{
 		maxFrame = 4;
@@ -79,18 +90,34 @@ void Yuri::Update()
 		}
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
-			if (action != eActs::moveForward)
+			switch (player)
 			{
-				action = eActs::moveForward;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 6;
+			case ePlayer::player1:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 5;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
 			}
+
 			elapsedCount++;
 			if (elapsedCount >= frameRate)
 			{
 				frameX++;
 				pos.x -= moveSpeed;
+				
 				if (frameX >= 8)
 				{
 					frameX = 0;
@@ -100,18 +127,34 @@ void Yuri::Update()
 		}
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(right))
 		{
-			if (action != eActs::moveBackward)
+			switch (player)
 			{
-				action = eActs::moveBackward;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 5;
+			case ePlayer::player1:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 5;
+				}
+				break;
 			}
+
 			elapsedCount++;
 			if (elapsedCount >= frameRate)
 			{
 				frameX++;
 				pos.x += moveSpeed;
+				
 				if (frameX >= 10)
 				{
 					frameX = 0;

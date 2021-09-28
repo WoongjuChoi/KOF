@@ -57,6 +57,16 @@ void King::Update()
 	BattleManager::GetSingleton()->SetHitBoxPos(0, kingSize.x, kingSize.y, kingSize.x, 0, player, pos);
 	BattleManager::GetSingleton()->SetHitBoxPos(1, 0, 0, 0, 0, player, pos);
 
+	if (BattleManager::GetSingleton()->CharCollision())
+	{
+		moveSpeed = 0.0f;
+	}
+	else moveSpeed = 10.0f;
+
+	if (action == eActs::moveBackward) moveSpeed = 10.0f;
+
+	BattleManager::GetSingleton()->MapCollision(pos, kingSize.x * 2, moveSpeed, action);
+
 	// 킹 맞았는지 체크
 	if (BattleManager::GetSingleton()->Hit())
 	{
@@ -70,14 +80,29 @@ void King::Update()
 	{
 		if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
-			if (action != eActs::moveForward)
+			switch (player)
 			{
-				action = eActs::moveForward;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 10;
+			case ePlayer::player1:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 9;
+					elapsedCount = 0;
+					maxFrame = 10;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 10;
+				}				
+				break;
 			}
-			elapsedCount++;
+
+			elapsedCount += 2;
 			if (elapsedCount >= frameRate)
 			{
 				frameX++;
@@ -91,21 +116,36 @@ void King::Update()
 		}
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(right))
 		{
-			if (action != eActs::moveBackward)
+			switch (player)
 			{
-				action = eActs::moveBackward;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 10;
+			case ePlayer::player1:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 10;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 9;
+					elapsedCount = 0;
+					maxFrame = 10;
+				}
+				break;
 			}
-			elapsedCount++;
+
+			elapsedCount += 2;
 			if (elapsedCount >= frameRate)
 			{
-				frameX++;
+				frameX--;
 				pos.x += moveSpeed;
-				if (frameX >= maxFrame)
+				if (frameX <= 0)
 				{
-					frameX = 0;
+					frameX = 9;
 				}
 				elapsedCount = 0;
 			}
@@ -169,7 +209,7 @@ void King::Update()
 	else
 	{
 		elapsedCount++;
-		if (elapsedCount >= frameRate)
+		if (elapsedCount >= frameRate / 2 + 1)
 		{
 			frameX++;
 			if (frameX >= maxFrame)

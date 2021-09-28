@@ -18,7 +18,7 @@ using namespace std;
 #define SAFE_RELEASE(p)	{ if (p) { p->Release(); delete p; p = nullptr; } }
 
 enum MoveDir { Left, Right, Up, Down };
-enum eActs { standing, move, weekPunch, weekFoot, strongPunch, strongFoot, hit, die, victory, moveForward, moveBackward, end };
+enum eActs { standing, weekPunch, weekFoot, strongPunch, strongFoot, hit, die, victory, moveForward, moveBackward, end };
 enum eBody { top, bottom, hitPoint, bodyend };
 enum ePlayer { player1 = -1, player2 = 1 };
 enum eCharacter {eHwajai, eYuri, eKing};

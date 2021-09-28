@@ -25,7 +25,7 @@
     <Filter Include="MainGame\Scene">
       <UniqueIdentifier>{ae23ecdf-1a44-4e19-91fd-1881bf4e8a78}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MainGame\Scene\KOF_Player">
+    <Filter Include="MainGame\KOF_Player">
       <UniqueIdentifier>{bab70d10-669c-4c06-96a8-2bd1a9e7410a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -43,16 +43,16 @@
       <Filter>2D Framework</Filter>
     </ClCompile>
     <ClCompile Include="Hwajai.cpp">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>2D Framework</Filter>
     </ClCompile>
     <ClCompile Include="Yuri.cpp">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClCompile>
     <ClCompile Include="King.cpp">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClCompile>
     <ClCompile Include="BattleManager.cpp">
       <Filter>2D Framework\Manager</Filter>
@@ -90,16 +90,16 @@
       <Filter>2D Framework</Filter>
     </ClInclude>
     <ClInclude Include="Hwajai.h">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>2D Framework</Filter>
     </ClInclude>
     <ClInclude Include="Yuri.h">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
     <ClInclude Include="King.h">
-      <Filter>MainGame\Scene\KOF_Player</Filter>
+      <Filter>MainGame\KOF_Player</Filter>
     </ClInclude>
     <ClInclude Include="BattleManager.h">
       <Filter>2D Framework\Manager</Filter>

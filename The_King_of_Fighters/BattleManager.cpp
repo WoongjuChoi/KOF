@@ -103,3 +103,35 @@ bool BattleManager::Hit()
 
     return false;
 }
+
+bool BattleManager::CharCollision()
+{
+    if (IntersectRect(&tempRect, &player1.hitBox[0], &player2.hitBox[0]))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool BattleManager::MapCollision(POINTFLOAT& pos, float charSize, float& moveSpeed, eActs action)
+{
+    int chSize = charSize / 2;
+    if ((WIN_SIZE_X - chSize) <= pos.x)
+    {
+        moveSpeed = 0.0f;
+        if (action == eActs::moveForward) moveSpeed = 10.0f;
+
+        return true;
+    }
+    else if (pos.x <= chSize)
+    {
+        moveSpeed = 0.0f;
+        if (action == eActs::moveForward) moveSpeed = 10.0f;
+
+        return true;
+    }
+    return false;
+}

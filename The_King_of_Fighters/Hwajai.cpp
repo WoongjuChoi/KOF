@@ -13,7 +13,9 @@ void Hwajai::Init(ePlayer P)
 	maxFrame = 9;
 	hwaj[eActs::standing].Init("Image/hwajai/standing.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 7;
-	hwaj[eActs::move].Init("Image/hwajai/walk.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
+	hwaj[eActs::moveForward].Init("Image/hwajai/walk.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
+	maxFrame = 7;
+	hwaj[eActs::moveBackward].Init("Image/hwajai/walk.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 12;
 	hwaj[eActs::weekPunch].Init("Image/hwajai/weekpunch.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 10;
@@ -26,6 +28,8 @@ void Hwajai::Init(ePlayer P)
 	hwaj[eActs::hit].Init("Image/hwajai/hit.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 	maxFrame = 9;
 	hwaj[eActs::die].Init("Image/hwajai/die.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
+	maxFrame = 6;
+	hwaj[eActs::victory].Init("Image/hwajai/win.bmp", (imageX * maxFrame), 611, maxFrame, 1, true, RGB(255, 0, 255));
 
 	frameX = frameY = 0;
 	elapsedCount = 0;
@@ -54,6 +58,16 @@ void Hwajai::Update()
 	BattleManager::GetSingleton()->SetHitBoxPos(0, size / 2, size + 60, size / 2, size - 40, player, pos);
 	BattleManager::GetSingleton()->SetHitBoxPos(1, 0, 0, 0, 0, player, pos);
 
+	if (BattleManager::GetSingleton()->CharCollision())
+	{
+		moveSpeed = 0.0f;
+	}
+	else moveSpeed = 10.0f;
+
+	if (action == eActs::moveBackward) moveSpeed = 10.0f;
+
+	BattleManager::GetSingleton()->MapCollision(pos, size, moveSpeed, action);
+
 	if (BattleManager::GetSingleton()->Hit())
 	{
 		maxFrame = 4;
@@ -76,13 +90,28 @@ void Hwajai::Update()
 
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(left))
 		{
-			if (action != eActs::move)
+			switch (player)
 			{
-				action = eActs::move;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 6;
+			case ePlayer::player1:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
 			}
+
 			elapsedCount++;
 			if (elapsedCount >= frameRate)
 			{
@@ -97,13 +126,28 @@ void Hwajai::Update()
 		}
 		else if (KeyManager::GetSingleton()->IsStayKeyDown(right))
 		{
-			if (action != eActs::move)
+			switch (player)
 			{
-				action = eActs::move;
-				frameX = 0;
-				elapsedCount = 0;
-				maxFrame = 5;
+			case ePlayer::player1:
+				if (action != eActs::moveForward)
+				{
+					action = eActs::moveForward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
+			case ePlayer::player2:
+				if (action != eActs::moveBackward)
+				{
+					action = eActs::moveBackward;
+					frameX = 0;
+					elapsedCount = 0;
+					maxFrame = 6;
+				}
+				break;
 			}
+
 			elapsedCount++;
 			if (elapsedCount >= frameRate)
 			{
@@ -137,19 +181,49 @@ void Hwajai::Update()
 			action = eActs::standing;
 		}
 
+		switch (player)
+		{
+		case player1:
+			if (BattleManager::GetSingleton()->Getplayer1Lose())
+			{
+				ActionChange(eActs::die, 8);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer1Win())
+			{
+				ActionChange(eActs::victory, 5);
+			}
+			break;
+		case player2:
+			if (BattleManager::GetSingleton()->Getplayer2Lose())
+			{
+				ActionChange(eActs::die, 8);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer2Win())
+			{
+				ActionChange(eActs::victory, 5);
+			}
+			break;
+		}
 	}
 	else
 	{
 		elapsedCount++;
-		if (elapsedCount >= frameRate)
+		if (elapsedCount >= frameRate / 2 + 1)
 		{
 			frameX++;
 			if (frameX >= maxFrame)
 			{
-				action = eActs::standing;
-				delay = false;
-				BattleManager::GetSingleton()->SetIsHit(false);
-				frameX = 0;
+				if (action == eActs::die || action == eActs::victory)
+				{
+					frameX = maxFrame;
+				}
+				else
+				{
+					action = eActs::standing;
+					delay = false;
+					BattleManager::GetSingleton()->SetIsHit(false);
+					frameX = 0;
+				}
 			}
 			elapsedCount = 0;
 		}

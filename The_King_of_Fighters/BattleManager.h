@@ -25,6 +25,8 @@ public:
     void Render(HDC hdc);
     void SetHitBoxPos(int hitboxNum, int left, int top, int right, int bottom, ePlayer player, POINTFLOAT pos);
     bool Hit();
+    bool CharCollision();
+    bool MapCollision(POINTFLOAT& pos, float charSize, float& moveSpeed, eActs action);
 
     inline void SetIsHit(bool hit) { this->isHit = hit; }
     inline void SetDamage(int damage) { this->damage = damage; }
