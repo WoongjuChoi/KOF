@@ -9,6 +9,7 @@
 #include "TitleScene.h"
 #include "CharacterSelect.h"
 #include "BattleScene.h"
+#include "Winner.h"
 
 //int MainGame::clickedMousePosX = 0;
 
@@ -74,6 +75,10 @@ void MainGame::Update()
 		player2->Update();
 		battleScene->Update();
 	}
+	else if (SceneManager::GetSingleton()->getScene() == eScene::winner)
+	{
+		winnerScene->Update();
+	}
 	//chSelect->Update();
 	InvalidateRect(g_hWnd, NULL, false);
 }
@@ -124,6 +129,26 @@ void MainGame::Render(HDC hdc)
 		battleScene->Render(hBackBufferDC);
 		player1->Render(hBackBufferDC);
 		player2->Render(hBackBufferDC);
+
+		if (SceneManager::GetSingleton()->getReadyChangeScene() == true)
+		{
+			Sleep(1000);
+			SceneManager::GetSingleton()->setScene(eScene::winner);
+			if (BattleManager::GetSingleton()->Getplayer1Win())
+			{
+				winnerScene = new Winner;
+				winnerScene->Init(CharacterP1);
+			}
+			else if (BattleManager::GetSingleton()->Getplayer2Win())
+			{
+				winnerScene = new Winner;
+				winnerScene->Init(CharacterP2);
+			}
+		}
+	}
+	else if (SceneManager::GetSingleton()->getScene() == eScene::winner)
+	{
+		winnerScene->Render(hBackBufferDC);
 	}
 
 	BattleManager::GetSingleton()->Render(hBackBufferDC);

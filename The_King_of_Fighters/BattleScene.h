@@ -4,7 +4,7 @@
 
 
 class Image;
-class BattleScene
+class BattleScene : public SceneManager
 {
 private:
 	enum eBattle {

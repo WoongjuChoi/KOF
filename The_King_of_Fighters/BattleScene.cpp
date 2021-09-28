@@ -64,6 +64,7 @@ void BattleScene::Update()
 			if (frameX >= maxFrame)
 			{
 				frameX = maxFrame;
+				SceneManager::GetSingleton()->setReadyChangeScene(true);
 			}
 			elapsedCount = 0;
 		}

@@ -25,7 +25,7 @@ enum eCharacter {eHwajai, eYuri, eKing};
 
 enum eDir { p1 = -1, p2 = 1 };
 
-enum class eScene { title, cSelect, battle };
+enum class eScene { title, cSelect, battle, winner};
 
 extern HWND g_hWnd;
 extern HINSTANCE g_hInstance;

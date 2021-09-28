@@ -10,6 +10,7 @@ class GameObject;
 class TitleScene;
 class CharacterSelect;
 class BattleScene;
+class Winner;
 class MainGame
 {
 private:
@@ -46,6 +47,7 @@ private:
 	TitleScene* titleScene;
 	CharacterSelect* chSelect;
 	BattleScene* battleScene;
+	Winner* winnerScene;
 
 public:
 	void Init();
