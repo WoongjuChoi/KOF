@@ -87,7 +87,7 @@ void BattleScene::Update()
 			if (frameX >= maxFrame)
 			{
 				frameX = maxFrame;
-
+				SceneManager::GetSingleton()->setReadyChangeScene(true);
 
 			}
 			elapsedCount = 0;
@@ -208,8 +208,12 @@ void BattleScene::Render(HDC hdc)
 				battleImage[GO].Render(hdc, WIN_SIZE_X / 2, WIN_SIZE_Y / 2, 14, frameY, 1);
 				if (delay >= delayCount)
 				{
+					frameX = 0;
+					maxFrame = 15;
+					frameRate = 4;
 					reset = false;
 					sceneChange = true;
+					nowImage = eBattle::eBattleEnd;
 				}
 			}
 
